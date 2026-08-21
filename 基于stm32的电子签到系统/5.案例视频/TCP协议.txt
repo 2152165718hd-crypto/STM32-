@@ -1,0 +1,41 @@
+当前 TCP 文本协议是手机作为 TCP Client 连接：
+
+WiFi：ESP8266_AP
+密码：12345678
+IP：192.168.4.1
+端口：5000
+每条命令以换行结尾：\n 或 \r\n
+命令	作用	返回格式
+HELLO	测试协议是否连通，确认设备是签到系统 TCP 协议	OK ATTENDANCE TCP V1
+PING	心跳测试，确认 TCP 连接仍正常	PONG
+GET STATUS	查询当前系统状态、当前时间、合法卡数量、签到记录数量	STATUS time=YYYY-MM-DD HH:MM:SS state=状态 auth=合法卡数量 records=记录数量
+GET LATEST	查询最近一次签到记录	有记录：LATEST id=人员编号 time=YYYY-MM-DD HH:MM:SS；无记录：LATEST none
+GET RECORDS N	查询最近 N 条签到记录，N 最大 20	第一行：RECORDS count=实际条数；中间多行：REC id=人员编号 time=YYYY-MM-DD HH:MM:SS；最后一行：END
+示例：
+
+HELLO
+返回：
+
+OK ATTENDANCE TCP V1
+GET STATUS
+返回示例：
+
+STATUS time=2026-04-12 14:30:00 state=WAIT_CARD auth=3 records=12
+GET LATEST
+返回示例：
+
+LATEST id=003 time=2026-04-12 14:29:10
+GET RECORDS 8
+返回示例：
+
+RECORDS count=2
+REC id=003 time=2026-04-12 14:29:10
+REC id=001 time=2026-04-12 14:20:03
+END
+主动推送格式：合法卡签到成功后，设备会自动发一行：
+
+EVENT SIGN_OK id=003 time=2026-04-12 14:31:22
+错误命令返回：
+
+ERR BAD_CMD
+state 常见值包括：WAIT_CARD、SIGN_OK、INVALID_CARD、SET_TIME、EEPROM_ERR、WIFI_ERR、CARD_SAVED、CARD_DELETED、CARD_NOT_FOUND、CARDS_CLEARED、RECORDS_CLEARED。
