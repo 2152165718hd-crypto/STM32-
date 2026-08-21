@@ -4,21 +4,23 @@
 
 [![Update](https://img.shields.io/badge/资料状态-持续实时更新中-brightgreen?style=flat-square&logo=git&logoColor=white)](https://github.com/2152165718hd-crypto/STM32-Graduation-Projects)
 [![WeChat](https://img.shields.io/badge/微信咨询-a2152165718-07C160?style=flat-square&logo=wechat&logoColor=white)](https://weixin.qq.com/)
-[![Service](https://img.shields.io/badge/业务承接-单片机毕设定制开发-blue?style=flat-square)](https://github.com/2152165718hd-crypto/STM32-Graduation-Projects)
+[![Service](https://img.shields.io/badge/业务承接-单片机毕设定制%20%7C%20成品出售-blue?style=flat-square)](https://github.com/2152165718hd-crypto/STM32-Graduation-Projects)
 [![Status](https://img.shields.io/badge/实物验证-100%25可运行-orange?style=flat-square)](https://github.com/2152165718hd-crypto/STM32-Graduation-Projects)
 
 ---
 
-### 📢 【承接单片机设计 / 毕业设计定制服务】
+### 📢 【承接单片机设计 / 毕业设计定制 / 实物成品出售】
 
-> 🎓 **需要毕业设计帮助或项目定制？本人长期承接各种单片机开发与毕业设计作品！**  
+> 🎓 **需要毕业设计帮助、项目定制或现成实物？本人长期承接单片机软硬件开发与成品出售！**  
 > 💡 **业务范围**：  
-> • **硬件设计**：STM32 / 51单片机 / ESP32 / Arduino 原理图与 PCB 绘制、元器件选型采购指导  
-> • **嵌入式软件**：Keil C 源码开发、传感器驱动编写、算法实现、功能调试  
-> • **物联网系统**：OneNet / 阿里云 IoT / 腾讯云接入、手机 App、微信小程序、PC上位机界面开发  
-> • **文档与答辩辅导**：开题报告、论文撰写辅导、原理图/流程图绘制、答辩 PPT 与一对一演示讲解  
+> • **🔥 实物成品出售**：支持本库所有项目及各类单片机**现成实物成品出售**（均已全套焊接、烧录、调试完毕，顺丰包邮，附带全套资料与技术指导，**到手即用**）  
+> • **🛠️ 毕业设计定制**：STM32 / 51单片机 / ESP32 / Arduino 等各类软硬件定制开发、功能扩展与升级  
+> • **🔌 硬件电路设计**：原理图与 PCB 绘制（立创EDA/Altium Designer）、打样焊接、元器件选型指导  
+> • **💻 嵌入式软件开发**：Keil C 源码编写、传感器驱动、控制算法实现、代码深度规范注释  
+> • **🌐 物联网与上位机**：OneNet / 阿里云 IoT / 腾讯云接入、手机 App、微信小程序、PC 上位机界面开发  
+> • **📑 论文与答辩辅导**：开题报告与论文撰写辅导、原理图/流程图绘制、答辩 PPT 制作与一对一演示讲解  
 > 
-> 💬 **有需求随时联系，合作添加微信**：<kbd><b> a2152165718 </b></kbd> （添加时请备注：**单片机设计 / 毕设咨询**）
+> 💬 **有需求随时联系，合作添加微信**：<kbd><b> a2152165718 </b></kbd> （添加时请备注：**单片机设计 / 成品咨询**）
 
 ---
 
