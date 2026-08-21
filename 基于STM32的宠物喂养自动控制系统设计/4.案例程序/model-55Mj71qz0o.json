@@ -1,0 +1,156 @@
+{
+  "version": "1.0",
+  "profile": {
+    "industryId": "2",
+    "sceneId": "27",
+    "categoryId": "420",
+    "productId": "55Mj71qz0o"
+  },
+  "properties": [
+    {
+      "identifier": "air_quality",
+      "name": "空气质量浓度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "百分比 / %"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "food_weight",
+      "name": "饲料剩余重量",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "10000",
+          "min": "0",
+          "step": "0.1",
+          "unit": "g"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "humidity",
+      "name": "环境湿度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "相对湿度 / %RH"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "illuminance",
+      "name": "光照强度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "照度 / Lux"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "pet_distance",
+      "name": "宠物距离",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "1000",
+          "min": "0",
+          "step": "0.1",
+          "unit": "cm"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "pet_near",
+      "name": "宠物靠近状态",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "1",
+          "false": "0"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "temperature",
+      "name": "环境温度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "摄氏度 / °C"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "water_level",
+      "name": "水位比例",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "百分比 / %"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    }
+  ],
+  "events": [],
+  "services": [],
+  "combs": []
+}

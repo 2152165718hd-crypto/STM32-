@@ -1,0 +1,33 @@
+#ifndef _ONENET_CONFIG_H_
+#define _ONENET_CONFIG_H_
+
+#define ONENET_PRODUCT_ID "55Mj71qz0o"
+#define ONENET_DEVICE_NAME "don1ng"
+#define ONENET_TOKEN "version=2018-10-31&res=products%2F55Mj71qz0o%2Fdevices%2Fdon1ng&et=1830272400&method=md5&sign=CxDLmGSKEPN5c7iypwgyaA%3D%3D"
+
+#define ONENET_MQTT_HOST "mqtts.heclouds.com"
+#define ONENET_MQTT_FALLBACK_HOST "studio-mqtt.heclouds.com"
+#define ONENET_MQTT_PORT 1883U
+#define ONENET_KEEPALIVE_SECONDS 60U
+#define ONENET_MQTT_CLEAN_SESSION 1U
+
+#define ONENET_PROPERTY_POST_TOPIC_TEMPLATE "$sys/%s/%s/thing/property/post"
+#define ONENET_PROPERTY_POST_QOS 0U
+
+#define ONENET_CONNECT_RETRY_MS 5000U
+#define ONENET_STATUS_POLL_MS 30000U
+
+#define ONENET_TOPIC_BUF_SIZE 160U
+#define ONENET_PAYLOAD_BUF_SIZE 512U
+
+#define ONENET_PETFEEDER_PROPERTY_COUNT 8U
+#define ONENET_PROPERTY_TEMPERATURE "temperature"
+#define ONENET_PROPERTY_HUMIDITY "humidity"
+#define ONENET_PROPERTY_ILLUMINANCE "illuminance"
+#define ONENET_PROPERTY_AIR_QUALITY "air_quality"
+#define ONENET_PROPERTY_PET_DISTANCE "pet_distance"
+#define ONENET_PROPERTY_PET_NEAR "pet_near"
+#define ONENET_PROPERTY_FOOD_WEIGHT "food_weight"
+#define ONENET_PROPERTY_WATER_LEVEL "water_level"
+
+#endif /* _ONENET_CONFIG_H_ */

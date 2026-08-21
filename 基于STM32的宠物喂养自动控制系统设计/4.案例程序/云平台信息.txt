@@ -1,0 +1,4 @@
+产品ID:	55Mj71qz0o
+设备名称：don1ng
+设备密钥：aDZDWXNzTkJBZTEwY3d5Um14WWl5d2dMUHlNdUZHQ3Y=
+token:	version=2018-10-31&res=products%2F55Mj71qz0o%2Fdevices%2Fdon1ng&et=1830272400&method=md5&sign=CxDLmGSKEPN5c7iypwgyaA%3D%3D

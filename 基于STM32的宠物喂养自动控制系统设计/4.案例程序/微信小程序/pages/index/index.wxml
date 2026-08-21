@@ -1,0 +1,97 @@
+<view class="page">
+  <view class="hero">
+    <view class="hero-main">
+      <text class="hero-kicker">OneNET 实时数据</text>
+      <text class="hero-title">智能宠物喂养系统</text>
+      <text class="hero-subtitle">设备：{{deviceName}}</text>
+    </view>
+    <button class="refresh-button" loading="{{refreshing}}" disabled="{{loading || refreshing}}" bindtap="handleRefresh">刷新</button>
+  </view>
+
+  <view class="device-meta">
+    <view class="meta-item">
+      <text class="meta-label">产品ID</text>
+      <text class="meta-value">{{productId}}</text>
+    </view>
+    <view class="meta-item">
+      <text class="meta-label">最近上报</text>
+      <text class="meta-value">{{updatedAt}}</text>
+    </view>
+  </view>
+
+  <view class="mcu-status {{deviceStatus.stateClass}}">
+    <view class="mcu-status-head">
+      <view class="mcu-status-dot"></view>
+      <view class="mcu-status-copy">
+        <text class="meta-label">单片机状态</text>
+        <text class="mcu-status-title">{{deviceStatus.label}}</text>
+      </view>
+    </view>
+    <view class="mcu-status-detail">
+      <text>{{deviceStatus.description}}</text>
+      <text>最后在线：{{deviceStatus.lastTimeText}}</text>
+    </view>
+  </view>
+
+  <view class="pet-panel {{petStatus.stateClass}}">
+    <view class="pet-copy">
+      <text class="panel-label">宠物状态</text>
+      <text class="pet-title">{{petStatus.label}}</text>
+      <text class="pet-desc">{{petStatus.description}}</text>
+      <text class="pet-time">状态时间：{{petStatus.timeText}}</text>
+    </view>
+    <image class="pet-image" src="{{petStatus.image}}" mode="aspectFit"></image>
+  </view>
+
+  <view wx:if="{{loading && !hasData}}" class="state-panel">
+    <view class="spinner"></view>
+    <text class="state-title">正在读取云平台数据</text>
+    <text class="state-text">请保持设备在线</text>
+  </view>
+
+  <view wx:elif="{{errorMessage && !hasData}}" class="state-panel error-panel">
+    <text class="state-title">读取失败</text>
+    <text class="state-text">{{errorMessage}}</text>
+    <button class="state-button" loading="{{refreshing}}" bindtap="handleRefresh">重新读取</button>
+  </view>
+
+  <view wx:elif="{{empty}}" class="state-panel">
+    <text class="state-title">暂无上报数据</text>
+    <text class="state-text">设备上报后会自动刷新</text>
+  </view>
+
+  <view wx:else class="dashboard">
+    <view wx:if="{{errorMessage}}" class="inline-error">
+      <text>{{errorMessage}}</text>
+    </view>
+
+    <view class="section-header">
+      <text class="section-title">环境与余量</text>
+      <text class="section-note">每 2 秒自动刷新</text>
+    </view>
+
+    <view class="metric-grid">
+      <view class="metric-card" wx:for="{{cards}}" wx:key="identifier">
+        <view class="metric-head">
+          <image class="metric-icon" src="{{item.image}}" mode="aspectFit"></image>
+          <text class="metric-name">{{item.name}}</text>
+        </view>
+        <view class="metric-value-row">
+          <text class="metric-value">{{item.valueText}}</text>
+          <text class="metric-unit">{{item.unit}}</text>
+        </view>
+        <view class="metric-progress">
+          <view class="metric-progress-bar" style="width: {{item.progress}}%;"></view>
+        </view>
+        <view class="metric-foot">
+          <text>{{item.rangeText}}</text>
+          <text>{{item.timeText}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer-note">
+    <text>Token 有效期至 {{tokenExpiresAt}}</text>
+  </view>
+</view>

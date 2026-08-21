@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundColor": "#f4f7f9",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#f4f7f9",
+    "navigationBarTitleText": "智能宠物喂养系统",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
