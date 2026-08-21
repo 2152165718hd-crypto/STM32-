@@ -1,0 +1,74 @@
+<view class="page-shell">
+  <view class="top-safe" style="height: {{topSafeHeight}}px;"></view>
+
+  <view class="hero hero--curve">
+    <view class="hero__content">
+      <view class="hero__copy">
+        <text class="hero__eyebrow">ONENET HISTORY</text>
+        <text class="hero__title">数据曲线</text>
+        <text class="hero__subtitle">最近更新时间：{{updatedAtText}}</text>
+      </view>
+      <button class="hero__refresh" bindtap="handleManualRefresh" loading="{{refreshing}}" hover-class="none">
+        刷新
+      </button>
+    </view>
+    <view class="hero__status">
+      {{rangeText}}
+    </view>
+  </view>
+
+  <view class="curve-board">
+    <block wx:for="{{charts}}" wx:key="key">
+      <view class="chart-card chart-card--{{item.theme}}">
+        <view class="chart-card__head">
+          <view class="chart-card__title-wrap">
+            <text class="chart-card__title">{{item.title}}</text>
+            <text class="chart-card__subtitle">最近 {{item.pointCount}} 条历史数据</text>
+          </view>
+          <text class="chart-card__latest">{{item.latestText}}</text>
+        </view>
+
+        <view class="chart-stats">
+          <view class="chart-stat">
+            <text class="chart-stat__label">最小值</text>
+            <text class="chart-stat__value">{{item.minText}}</text>
+          </view>
+          <view class="chart-stat">
+            <text class="chart-stat__label">最大值</text>
+            <text class="chart-stat__value">{{item.maxText}}</text>
+          </view>
+          <view class="chart-stat">
+            <text class="chart-stat__label">最近点</text>
+            <text class="chart-stat__value">{{item.lastUpdatedText}}</text>
+          </view>
+        </view>
+
+        <view wx:if="{{item.empty}}" class="chart-card__empty">
+          暂无历史数据
+        </view>
+        <canvas
+          wx:else
+          class="chart-canvas"
+          canvas-id="{{item.canvasId}}"
+          width="690"
+          height="260"
+        ></canvas>
+      </view>
+    </block>
+
+    <view wx:if="{{errorMessage}}" class="message message--error">
+      {{errorMessage}}
+    </view>
+  </view>
+
+  <view class="bottom-nav">
+    <view class="bottom-nav__item" bindtap="goHomePage">
+      <image class="bottom-nav__icon" src="../../image/首页.png" mode="aspectFit"></image>
+      <text class="bottom-nav__label">主页</text>
+    </view>
+    <view class="bottom-nav__item bottom-nav__item--active">
+      <image class="bottom-nav__icon" src="../../image/数据曲线.png" mode="aspectFit"></image>
+      <text class="bottom-nav__label">数据曲线</text>
+    </view>
+  </view>
+</view>

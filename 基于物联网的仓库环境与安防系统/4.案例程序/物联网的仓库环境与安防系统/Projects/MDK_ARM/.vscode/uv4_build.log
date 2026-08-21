@@ -1,0 +1,11 @@
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Program Files (x86)\KEIL\MDK\ARM\ARMCC\Bin'
+Build target 'Temolate'
+compiling Menu.c...
+..\..\Drivers\APPLICATION\Menu\Menu.c(716): warning:  #177-D: function "Menu_ProcessCommandLine"  was declared but never referenced
+  static void Menu_ProcessCommandLine(uint8_t link_id, char *line)
+..\..\Drivers\APPLICATION\Menu\Menu.c: 1 warning, 0 errors
+linking...
+Program Size: Code=49414 RO-data=3506 RW-data=288 ZI-data=12768  
+FromELF: creating hex file...
+"..\..\Output\Objects\Project.axf" - 0 Error(s), 1 Warning(s).
+Build Time Elapsed:  00:00:01

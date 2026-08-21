@@ -1,0 +1,70 @@
+<view class="page-shell">
+  <view class="top-safe" style="height: {{topSafeHeight}}px;"></view>
+
+  <view class="hero">
+    <view class="hero__content">
+      <view class="hero__copy">
+        <text class="hero__eyebrow">STM32 LAB SYSTEM</text>
+        <text class="hero__title">仓库环境与安防</text>
+        <text class="hero__subtitle">最近更新时间：{{updatedAtText}}</text>
+      </view>
+      <button class="hero__refresh" bindtap="handleManualRefresh" loading="{{refreshing}}" hover-class="none">
+        刷新
+      </button>
+    </view>
+    <view class="hero__status {{online ? 'hero__status--online' : 'hero__status--offline'}}">
+      {{statusText}}
+    </view>
+  </view>
+
+  <view class="dashboard">
+    <view class="metric-grid">
+      <block wx:for="{{sensorCards}}" wx:key="key">
+        <view class="metric-card metric-card--{{item.theme}}">
+          <image class="metric-card__icon" src="{{item.icon}}" mode="aspectFit"></image>
+          <text class="metric-card__label">{{item.title}}</text>
+          <text class="metric-card__value">{{item.value}}</text>
+        </view>
+      </block>
+    </view>
+
+    <view class="alarm-card">
+      <view class="alarm-card__head">
+        <view class="alarm-card__icon-wrap">
+          <image class="alarm-card__icon" src="../../image/声光报警器.png" mode="aspectFit"></image>
+        </view>
+        <view class="alarm-card__summary">
+          <text class="alarm-card__title">声光报警器</text>
+          <text class="alarm-card__value">{{alarmStatusText}}</text>
+          <text class="alarm-card__hint">{{controlLoading ? '命令下发中...' : '远程强制控制报警输出'}}</text>
+        </view>
+      </view>
+
+      <view class="alarm-card__control">
+        <view class="alarm-card__state {{alarmOn ? 'alarm-card__state--on' : 'alarm-card__state--off'}}">
+          {{alarmOn ? '已开启' : '已关闭'}}
+        </view>
+        <switch checked="{{alarmOn}}" bindchange="onAlarmSwitchChange" color="#ea6a4a" disabled="{{controlLoading}}"></switch>
+      </view>
+    </view>
+
+    <view wx:if="{{errorMessage}}" class="message message--error">
+      {{errorMessage}}
+    </view>
+
+    <view class="message message--tip">
+      数据来源：OneNet 设备属性
+    </view>
+  </view>
+
+  <view class="bottom-nav">
+    <view class="bottom-nav__item bottom-nav__item--active">
+      <image class="bottom-nav__icon" src="../../image/首页.png" mode="aspectFit"></image>
+      <text class="bottom-nav__label">主页</text>
+    </view>
+    <view class="bottom-nav__item" bindtap="goToCurvePage">
+      <image class="bottom-nav__icon" src="../../image/数据曲线.png" mode="aspectFit"></image>
+      <text class="bottom-nav__label">数据曲线</text>
+    </view>
+  </view>
+</view>

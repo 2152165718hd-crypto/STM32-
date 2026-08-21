@@ -1,0 +1,4 @@
+产品ID:	FU4VqqGAT7
+设备名称：don1ng
+设备密钥：aE1TZkluaGJJeWF0WDhxckhWVlE5Y2swV0ZPYTRydlc=
+token:	version=2018-10-31&res=products%2FFU4VqqGAT7%2Fdevices%2Fdon1ng&et=1798736400&method=md5&sign=eMPJnRGGARuAqEBeifsuCw%3D%3D

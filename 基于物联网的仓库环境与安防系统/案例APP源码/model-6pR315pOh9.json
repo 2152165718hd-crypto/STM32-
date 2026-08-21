@@ -1,0 +1,100 @@
+{
+  "version": "1.0",
+  "profile": {
+    "industryId": "2",
+    "sceneId": "19",
+    "categoryId": "1170",
+    "productId": "6pR315pOh9"
+  },
+  "properties": [
+    {
+      "identifier": "AV_ALM",
+      "name": "声光报警器",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "1",
+          "false": "0"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "Hum",
+      "name": "湿度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "相对湿度 / %RH"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "PIR",
+      "name": "红外传感器",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "1",
+          "false": "0"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "Smoke",
+      "name": "烟雾浓度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "百万分率 / ppm"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "Temp",
+      "name": "温度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "摄氏度 / °C"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    }
+  ],
+  "events": [],
+  "services": [],
+  "combs": []
+}
