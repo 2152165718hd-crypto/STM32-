@@ -1,0 +1,152 @@
+{
+  "version": "1.0",
+  "profile": {
+    "industryId": "1",
+    "sceneId": "17",
+    "categoryId": "254",
+    "productId": "VXTy1nU2xM"
+  },
+  "properties": [
+    {
+      "identifier": "alarm_status",
+      "name": "超温报警状态",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "1",
+          "false": "0"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "illuminance",
+      "name": "光照强度",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "200000",
+          "min": "0",
+          "step": "0.01",
+          "unit": "照度 / Lux"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "light_online",
+      "name": "光照传感器通信状态",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "1",
+          "false": "0"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "report_period",
+      "name": "数据上报周期",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "1000000",
+          "min": "0",
+          "step": "1",
+          "unit": "秒"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "slave_online",
+      "name": "从机通信状态",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "1",
+          "false": "0"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "temperature",
+      "name": "从机温度",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "125",
+          "min": "-55",
+          "step": "0.1",
+          "unit": "摄氏度 / °C"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "temperature_threshold",
+      "name": "报警阈值",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "max": "125",
+          "min": "0",
+          "step": "0.1",
+          "unit": "摄氏度 / °C"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "uptime",
+      "name": "主机运行时间",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "2147483647",
+          "min": "0",
+          "step": "1",
+          "unit": "秒 / s"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    }
+  ],
+  "events": [],
+  "services": [],
+  "combs": []
+}
