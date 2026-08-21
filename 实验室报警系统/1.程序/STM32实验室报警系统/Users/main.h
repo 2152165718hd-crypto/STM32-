@@ -1,0 +1,21 @@
+#ifndef __MAIN_H
+#define __MAIN_H
+
+/* Includes ------------------------------------------------------------------*/
+#include "stm32f1xx_hal.h"
+
+/// Exported types ------------------------------------------------------------
+#include ".\SYSTEM\delay\delay.h"
+#include ".\SYSTEM\sys\sys.h"
+#include ".\Hardware\OLED\OLED.h"
+#include ".\Hardware\KEY\KEY.h"
+#include ".\Hardware\DHT11\DHT11.h"
+#include ".\Hardware\ESP_01S\ESP_01S.h"
+#include ".\Hardware\Flame\Flame.h"
+#include ".\Hardware\MQ2_Smoke\MQ2_Smoke.h"
+#include ".\Hardware\AV_Alarm\AV_Alarm.h"
+#include ".\APPLICATION\Menu\Menu.h"
+
+#endif /* __MAIN_H */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
