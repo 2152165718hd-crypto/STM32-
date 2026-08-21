@@ -1,0 +1,72 @@
+$PACKAGES
+0.96OLED_4P ! 0.96OLED_4P ! '{Value}' ; OLED1 
+拨动开关_侧 ! 拨动开关_侧 ! '{Value}' ; SW1 
+充电模块 ! 充电模块 ! '{Value}' ; 充电模块 
+CONN-TH_2P-P2.00_HC-PH-2A-M ! CONN-TH_2P-P2.00_HC-PH-2A-M ! '{Value}' ; 喇叭 ,
+        锂电池输入 
+CONN-TH_6P-P2.54_KF128-2.54-6P ! CONN-TH_6P-P2.54_KF128-2.54-6P ! '{Value}' ; ,
+        U3 
+,
+        CONN-TH_L53.3-W22.9_STM32F103C8T6-CARD ! CONN-TH_L53.3-W22.9_STM32F103C8T6-CARD ! '{Value}' ,
+        ; U1 
+HDR-TH_2P-P2.54-V-F ! HDR-TH_2P-P2.54-V-F ! '{Value}' ; H1 H2 
+HDR-TH_3P-P2.54-V-F ! HDR-TH_3P-P2.54-V-F ! '{Value}' ; 光照传感器 温湿度传感器 有源蜂鸣器 
+HDR-TH_4P-P2.54-V-F ! HDR-TH_4P-P2.54-V-F ! '{Value}' ; 蓝牙模块 L9110H风扇 
+HDR-TH_5P-P2.54-V-F ! HDR-TH_5P-P2.54-V-F ! '{Value}' ; DS1302实时时钟 
+HDR-TH_6P-P2.54-V-F ! HDR-TH_6P-P2.54-V-F ! '{Value}' ; W25Q64存储模块 
+HDR-TH_7P-P2.54-V-F ! HDR-TH_7P-P2.54-V-F ! '{Value}' ; LU6288语音合成模块 
+HX711 ! HX711 ! '{Value}' ; HX711 
+,
+        KEY-TH_4P-L6.0-W6.0-P4.50-LS6.50 ! KEY-TH_4P-L6.0-W6.0-P4.50-LS6.50 ! '{Value}' ,
+        ; SW3 SW4 SW6 SW7 
+LED-TH_BD3.8-P2.54-RD ! LED-TH_BD3.8-P2.54-RD ! '{Value}' ; LED1 
+XL3608升压模块 ! XL3608升压模块 ! '{Value}' ; XL2608升压模块 
+$A_PROPERTIES
+$NETS
+'$1N178' ; SW1.1 XL2608升压模块.7 XL2608升压模块.8 
+'3.3V' ; 光照传感器.3 温湿度传感器.1 有源蜂鸣器.1 DS1302实时时钟.5 LED1.2 OLED1.2 U1.20 U1.38 ,
+        W25Q64存储模块.1 
+'A-' ; HX711.3 U3.4 
+'A+' ; HX711.4 U3.3 
+'B-' ; HX711.5 U3.2 
+'B+' ; HX711.6 U3.1 
+'BLUE_RXD' ; 蓝牙模块.4 U1.27 
+'BLUE_TXD' ; 蓝牙模块.3 U1.28 
+'BUZZER_IO' ; 有源蜂鸣器.2 U1.35 
+'DHT11_DATA' ; 温湿度传感器.2 U1.36 
+'DS1302_IO' ; DS1302实时时钟.2 U1.9 
+'DS1302_RST' ; DS1302实时时钟.1 U1.8 
+'DS1302_SCLK' ; DS1302实时时钟.3 U1.10 
+'E-' ; HX711.2 U3.5 
+'E+' ; HX711.1 U3.6 
+'I2C1_SCL' ; OLED1.3 U1.14 
+'I2C1_SDA' ; OLED1.4 U1.15 
+'LED_IO' ; LED1.1 U1.5 
+'LU6288_RXD' ; LU6288语音合成模块.4 U1.6 
+'LU6288_TXD' ; LU6288语音合成模块.3 U1.7 
+'MOTOR_INA' ; L9110H风扇.3 U1.16 
+'MOTOR_INB' ; L9110H风扇.4 U1.17 
+'SPI1_MISO' ; U1.31 W25Q64存储模块.3 
+'SPI1_MOSI' ; U1.32 W25Q64存储模块.6 
+'SPK-' ; 喇叭.2 LU6288语音合成模块.7 
+'SPK+' ; 喇叭.1 LU6288语音合成模块.6 
+'W25Q64_CLK' ; U1.30 W25Q64存储模块.5 
+'W25Q64_CS' ; U1.29 W25Q64存储模块.2 
+'WEIGHT_DT' ; HX711.9 U1.11 
+'WEIGHT_SCK' ; HX711.8 U1.12 
+5V ; 蓝牙模块.1 H1.1 HX711.7 L9110H风扇.2 LU6288语音合成模块.5 U1.18 XL2608升压模块.1 ,
+        XL2608升压模块.2 
+ADC0 ; U1.25 
+ADC1 ; 光照传感器.1 U1.26 
+BUSY ; LU6288语音合成模块.1 
+GND ; 充电模块.2 光照传感器.2 蓝牙模块.2 锂电池输入.2 温湿度传感器.3 有源蜂鸣器.3 DS1302实时时钟.4 H1.2 H2.2 ,
+        HX711.10 L9110H风扇.1 LU6288语音合成模块.2 OLED1.1 SW1.4 SW1.5 SW3.3 SW3.4 ,
+        SW4.3 SW4.4 SW6.3 SW6.4 SW7.3 SW7.4 U1.19 U1.39 U1.40 W25Q64存储模块.4 ,
+        XL2608升压模块.3 XL2608升压模块.4 XL2608升压模块.5 XL2608升压模块.6 
+SW1 ; SW3.1 SW3.2 U1.1 
+SW2 ; SW4.1 SW4.2 U1.2 
+SW3 ; SW6.1 SW6.2 U1.3 
+SW4 ; SW7.1 SW7.2 U1.4 
+VIN ; 充电模块.1 锂电池输入.1 H2.1 SW1.2 
+$SCHEDULE
+$END

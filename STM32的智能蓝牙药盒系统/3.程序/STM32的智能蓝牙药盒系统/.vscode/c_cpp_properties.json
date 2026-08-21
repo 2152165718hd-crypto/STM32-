@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compileCommands": [
+                "${workspaceFolder}/Projects/MDK_ARM/build/Temolate/compile_commands.json"
+            ]
+        }
+    ],
+    "version": 4
+}
