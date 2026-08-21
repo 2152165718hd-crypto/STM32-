@@ -56,3 +56,7 @@ $RECYCLE.BIN/
 *.zip
 *.rar
 *.7z
+
+# 百度网盘临时上传缓存文件
+*.baiduyun.*
+*.baiduyun.uploading.cfg
