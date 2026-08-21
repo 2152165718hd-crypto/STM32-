@@ -1,0 +1,10 @@
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Program Files (x86)\KEIL\MDK\ARM\ARMCC\Bin'
+Build target 'Temolate'
+compiling Relay.c...
+..\..\Drivers\Hardware\Relay\Relay.c(1): error:  #5: cannot open source input file "./Hardware/LED/LED.h": No such file or directory
+  #include "./Hardware/LED/LED.h"
+..\..\Drivers\Hardware\Relay\Relay.c: 0 warnings, 1 error
+compiling Menu.c...
+"..\..\Output\Objects\Project.axf" - 1 Error(s), 0 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:01
