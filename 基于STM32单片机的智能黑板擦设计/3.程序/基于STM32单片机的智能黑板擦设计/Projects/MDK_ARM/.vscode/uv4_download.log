@@ -1,0 +1,5 @@
+Load "..\\..\\Output\\Objects\\Project.axf" 
+_____^
+*** error 56: cannot open file
+Error: Flash Download failed  -  Could not load file '..\..\Output\Objects\Project.axf'
+Flash Load finished at 21:33:11
