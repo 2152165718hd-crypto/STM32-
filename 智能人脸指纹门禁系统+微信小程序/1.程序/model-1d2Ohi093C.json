@@ -1,0 +1,99 @@
+{
+  "version": "1.0",
+  "profile": {
+    "industryId": "1",
+    "sceneId": "14",
+    "categoryId": "300",
+    "productId": "1d2Ohi093C"
+  },
+  "properties": [
+    {
+      "identifier": "Face_count",
+      "name": "人脸个数",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "个"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "Fingerprint_count",
+      "name": "指纹数量",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "个"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "Password",
+      "name": "密码",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "string",
+        "specs": {
+          "length": 20
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "RFID_count",
+      "name": "卡片数量",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "个"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "Servo",
+      "name": "舵机状态",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "1",
+          "false": "0"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    }
+  ],
+  "events": [],
+  "services": [],
+  "combs": []
+}

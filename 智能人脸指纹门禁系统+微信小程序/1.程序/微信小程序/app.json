@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#007AFF",
+    "navigationBarTitleText": "智能门禁云控",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f4f5f7"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

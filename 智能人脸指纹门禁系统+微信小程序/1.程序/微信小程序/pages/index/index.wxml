@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<view class="container">
+  
+  <!-- 状态信息区 -->
+  <view class="status-card">
+    <view class="status-row">
+      <text class="status-label">设备状态:</text>
+      <text class="status-value {{deviceOnline ? 'online' : 'offline'}}">{{deviceOnline ? '在线' : '离线'}}</text>
+    </view>
+    <view class="status-row">
+      <text class="status-label">最后更新:</text>
+      <text class="status-value time-val">{{lastUpdateTime}}</text>
+    </view>
+  </view>
+
+  <!-- 传感器数据网格区 -->
+  <view class="grid-container">
+    <view class="grid-item">
+      <image class="icon" src="../../image/人脸个数.png" mode="aspectFit"></image>
+      <text class="item-title">人脸个数</text>
+      <text class="item-value">{{faceCount}}</text>
+    </view>
+    <view class="grid-item">
+      <image class="icon" src="../../image/指纹数量.png" mode="aspectFit"></image>
+      <text class="item-title">指纹数量</text>
+      <text class="item-value">{{fingerprintCount}}</text>
+    </view>
+    <view class="grid-item">
+      <image class="icon" src="../../image/RFID卡片数量.png" mode="aspectFit"></image>
+      <text class="item-title">卡片数量</text>
+      <text class="item-value">{{rfidCount}}</text>
+    </view>
+    <view class="grid-item" bindtap="togglePasswordHint">
+      <image class="icon" src="../../image/查看密码.png" mode="aspectFit"></image>
+      <text class="item-title">管理密码(点击)</text>
+      <text class="item-value {{showPassword ? 'pwd-text' : 'pwd-hidden'}}">{{showPassword ? password : '******'}}</text>
+    </view>
+  </view>
+
+  <!-- 云端控制区 -->
+  <view class="control-container">
+    <view class="control-title">云端远程控制</view>
+    
+    <view class="btn-group">
+      <view class="control-btn door-btn" hover-class="btn-hover" bindtap="openDoor">
+        <image class="btn-icon" src="../../image/远程开门.png" mode="aspectFit"></image>
+        <text>远程开门</text>
+      </view>
+      
+      <view class="control-btn pwd-btn" hover-class="btn-hover" bindtap="changePassword">
+        <image class="btn-icon" src="../../image/修改密码.png" mode="aspectFit"></image>
+        <text>修改密码</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 密码修改弹窗 -->
+  <view class="modal-mask" wx:if="{{showPasswordModal}}">
+    <view class="modal-content">
+      <view class="modal-title">修改管理员密码</view>
+      <input class="modal-input" placeholder="请输入新密码(最长6位)" value="{{newPassword}}" bindinput="onPasswordInput" type="number" maxlength="6" />
+      <view class="modal-btns">
+        <button class="modal-btn cancel" bindtap="closePasswordModal">取消</button>
+        <button class="modal-btn confirm" bindtap="submitNewPassword">下发</button>
+      </view>
+    </view>
+  </view>
+
+</view>
