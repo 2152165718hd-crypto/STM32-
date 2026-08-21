@@ -2,10 +2,10 @@
 
 # 🚀 STM32 单片机毕业设计/课程设计全套精选资料库（23个完整项目）
 
-[![Update](https://img.shields.io/badge/资料状态-持续实时更新中-brightgreen?style=for-the-badge&logo=git&logoColor=white)](https://github.com/2152165718hd-crypto/STM32-)
-[![WeChat](https://img.shields.io/badge/微信咨询-a2152165718-07C160?style=for-the-badge&logo=wechat&logoColor=white)](https://weixin.qq.com/)
-[![Service](https://img.shields.io/badge/业务承接-单片机毕设定制开发-blue?style=for-the-badge)](https://github.com/2152165718hd-crypto/STM32-)
-[![Status](https://img.shields.io/badge/实物验证-100%25可运行-orange?style=for-the-badge)](https://github.com/2152165718hd-crypto/STM32-)
+[![Update](https://img.shields.io/badge/资料状态-持续实时更新中-brightgreen?style=flat-square&logo=git&logoColor=white)](https://github.com/2152165718hd-crypto/STM32-)
+[![WeChat](https://img.shields.io/badge/微信咨询-a2152165718-07C160?style=flat-square&logo=wechat&logoColor=white)](https://weixin.qq.com/)
+[![Service](https://img.shields.io/badge/业务承接-单片机毕设定制开发-blue?style=flat-square)](https://github.com/2152165718hd-crypto/STM32-)
+[![Status](https://img.shields.io/badge/实物验证-100%25可运行-orange?style=flat-square)](https://github.com/2152165718hd-crypto/STM32-)
 
 ---
 
