@@ -1,0 +1,52 @@
+$PACKAGES
+0.96OLED_4P ! 0.96OLED_4P ! '{Value}' ; OLED1 
+拨动开关_侧 ! 拨动开关_侧 ! '{Value}' ; SW5 
+,
+        CONN-TH_2P-P2.50_HX-2.54MM-2P-ZZ-MS ! CONN-TH_2P-P2.50_HX-2.54MM-2P-ZZ-MS ! '{Value}' ,
+        ; 锂电池输入 
+,
+        CONN-TH_L53.3-W22.9_STM32F103C8T6-CARD ! CONN-TH_L53.3-W22.9_STM32F103C8T6-CARD ! '{Value}' ,
+        ; U1 
+HDR-TH_3P-P2.54-V-M ! HDR-TH_3P-P2.54-V-M ! '{Value}' ; 浊度检测 DS18B20 
+HDR-TH_6P-P2.54-V-M-1 ! HDR-TH_6P-P2.54-V-M-1 ! '{Value}' ; PH 
+HDR-TH_7P-P2.54-V-M ! HDR-TH_7P-P2.54-V-M ! '{Value}' ; Lora 
+,
+        KEY-TH_4P-L6.0-W6.0-P4.50-LS6.50 ! KEY-TH_4P-L6.0-W6.0-P4.50-LS6.50 ! '{Value}' ,
+        ; SW1 SW2 SW3 SW4 
+LED_0805 ! LED_0805 ! '{Value}' ; LED1 
+R0805 ! R0805 ! 10K ; R1 R2 R3 
+TP4056 1A锂电池充电板模块 ! TP4056 1A锂电池充电板模块 ! '{Value}' ; U2 
+XL3608升压模块 ! XL3608升压模块 ! '{Value}' ; XL2608升压模块 
+$A_PROPERTIES
+$NETS
+'$1N140' ; 浊度检测.2 R1.2 
+'$1N59' ; LED1.2 R3.1 
+'$1N78' ; SW5.2 XL2608升压模块.7 XL2608升压模块.8 
+'$1N99' ; SW5.1 U2.4 
+'3.3V' ; DS18B20.2 Lora.6 OLED1.2 R3.2 U1.20 U1.38 
+'I2C1_SCL' ; OLED1.3 U1.14 
+'I2C1_SDA' ; OLED1.4 U1.15 
+'LED_IO' ; LED1.1 U1.13 
+'LORA_AUX' ; Lora.5 U1.32 
+'LORA_M0' ; Lora.1 U1.33 
+'LORA_M1' ; Lora.2 U1.34 
+'LORA_RX' ; Lora.3 U1.35 
+'LORA_TX' ; Lora.4 U1.36 
+'PH_DO' ; PH.2 U1.28 
+'PH_OUT' ; PH.3 U1.27 
+'PH_TO' ; PH.1 U1.29 
+'TEMP_DATA' ; DS18B20.3 U1.26 
+'TURBIDTY_AO' ; R1.1 R2.2 U1.25 
+'USART1_RX' ; U1.7 
+'USART1_TX' ; U1.6 
+5V ; 浊度检测.1 PH.6 U1.18 XL2608升压模块.1 XL2608升压模块.2 
+GND ; 锂电池输入.2 浊度检测.3 DS18B20.1 Lora.7 OLED1.1 PH.4 PH.5 R2.1 SW1.3 SW1.4 SW2.3 ,
+        SW2.4 SW3.3 SW3.4 SW4.3 SW4.4 SW5.4 SW5.5 U1.19 U1.39 U1.40 U2.1 U2.2 ,
+        XL2608升压模块.3 XL2608升压模块.4 XL2608升压模块.5 XL2608升压模块.6 
+SW1 ; SW1.1 SW1.2 U1.1 
+SW2 ; SW2.1 SW2.2 U1.2 
+SW3 ; SW3.1 SW3.2 U1.3 
+SW4 ; SW4.1 SW4.2 U1.4 
+VIN ; 锂电池输入.1 U2.3 
+$SCHEDULE
+$END
