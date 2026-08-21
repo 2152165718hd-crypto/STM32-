@@ -1,0 +1,51 @@
+﻿# Keil MDK 编译中间文件
+*.bak
+*.ddk
+*.edk
+*.lst
+*.lnp
+*.mpf
+*.mpj
+*.obj
+*.omf
+*.plg
+*.rpt
+*.tmp
+*.__i
+*.crf
+*.o
+*.d
+*.axf
+*.tra
+*.dep
+*.iex
+*.htm
+*.sct
+*.map
+
+# Keil 调试/下载相关
+JLinkLog.txt
+*.jlink
+*.ini
+
+# Keil 工程选项文件（包含本机路径，通常不提交，如需保留请注释掉下面两行）
+*.opt
+*.uvguix.*
+*.uvoptx
+
+# 编译输出目录
+Listings/
+Objects/
+Output/
+DebugConfig/
+
+# Windows 系统文件
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# 其他临时文件
+*.swp
+*.swo
+*~
+.DS_Store
