@@ -1,0 +1,54 @@
+<view class="page threshold-page" style="padding-top: {{safeTop}}px;">
+  <view class="topbar">
+    <button class="icon-button" bindtap="goBack">
+      <image class="icon" src="/image/icon-back.svg" mode="aspectFit"></image>
+    </button>
+    <view class="topbar-text">
+      <view class="topbar-title">阈值设置</view>
+      <view class="topbar-subtitle">设置后由 OneNET 下发到主机</view>
+    </view>
+    <button class="icon-button" bindtap="loadLatest" loading="{{loading}}">
+      <image class="icon" src="/image/icon-refresh.svg" mode="aspectFit"></image>
+    </button>
+  </view>
+
+  <view wx:if="{{error}}" class="error">{{error}}</view>
+
+  <view class="threshold-list">
+    <view wx:for="{{fields}}" wx:key="id" class="threshold-card">
+      <view class="field-head">
+        <view class="field-title">
+          <image src="{{item.icon}}" mode="aspectFit"></image>
+          <text>{{item.title}}</text>
+        </view>
+        <view class="field-value">{{item.value}}{{item.unit}}</view>
+      </view>
+      <slider
+        min="{{item.min}}"
+        max="{{item.max}}"
+        step="{{item.step}}"
+        value="{{item.value}}"
+        data-id="{{item.id}}"
+        bindchange="onSliderChange"
+        activeColor="#1677ff"
+        backgroundColor="#d9e1ee"
+        block-size="22"
+      />
+      <view class="field-input-row">
+        <text>{{item.min}}{{item.unit}}</text>
+        <input
+          type="number"
+          value="{{item.value}}"
+          data-id="{{item.id}}"
+          bindblur="onInputChange"
+        />
+        <text>{{item.max}}{{item.unit}}</text>
+      </view>
+    </view>
+  </view>
+
+  <button class="save-button" bindtap="saveThresholds" loading="{{saving}}">
+    <image src="/image/icon-save.svg" mode="aspectFit"></image>
+    保存并下发
+  </button>
+</view>

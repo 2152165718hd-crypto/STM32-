@@ -1,0 +1,97 @@
+.threshold-page {
+  padding-bottom: 140rpx;
+}
+
+.topbar {
+  gap: 18rpx;
+}
+
+.topbar-text {
+  flex: 1;
+}
+
+.threshold-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  margin-top: 24rpx;
+}
+
+.threshold-card {
+  padding: 26rpx 24rpx;
+  border-radius: 8rpx;
+  background: #ffffff;
+  box-shadow: 0 10rpx 28rpx rgba(30, 48, 73, 0.06);
+}
+
+.field-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.field-title {
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+  color: #3d485a;
+  font-size: 28rpx;
+  font-weight: 600;
+  min-width: 0;
+}
+
+.field-title image {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.field-value {
+  color: #1677ff;
+  font-size: 30rpx;
+  font-weight: 700;
+  flex: none;
+}
+
+.field-input-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+  color: #748094;
+  font-size: 23rpx;
+}
+
+.field-input-row input {
+  width: 156rpx;
+  height: 58rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  color: #1d2530;
+  background: #f1f5fb;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.save-button {
+  position: fixed;
+  left: 28rpx;
+  right: 28rpx;
+  bottom: calc(env(safe-area-inset-bottom) + 28rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+  height: 88rpx;
+  border-radius: 8rpx;
+  color: #ffffff;
+  background: #1677ff;
+  font-size: 30rpx;
+  font-weight: 700;
+  box-shadow: 0 12rpx 28rpx rgba(22, 119, 255, 0.28);
+}
+
+.save-button image {
+  width: 36rpx;
+  height: 36rpx;
+}

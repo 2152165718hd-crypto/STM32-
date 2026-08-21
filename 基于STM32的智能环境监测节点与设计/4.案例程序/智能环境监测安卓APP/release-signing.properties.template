@@ -1,0 +1,7 @@
+# Copy this file to release-signing.properties and replace the values below.
+storeFile=keystore/release-keystore.jks
+storePassword=
+keyAlias=envmonitor-release
+# For PKCS12 keystores, use the same password as storePassword.
+keyPassword=
+storeType=PKCS12

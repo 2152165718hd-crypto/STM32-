@@ -1,0 +1,11 @@
+*.iml
+.gradle/
+.idea/
+build/
+local.properties
+onenet.debug.properties
+release-signing.properties
+keystore/
+captures/
+app/build/
+app/release/

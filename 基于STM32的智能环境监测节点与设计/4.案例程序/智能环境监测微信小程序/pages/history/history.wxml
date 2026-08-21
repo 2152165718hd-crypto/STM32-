@@ -1,0 +1,67 @@
+<view class="page history-page" style="padding-top: {{safeTop}}px;">
+  <view class="topbar history-topbar">
+    <button class="icon-button" bindtap="goBack">
+      <image class="icon" src="/image/icon-back.svg" mode="aspectFit"></image>
+    </button>
+    <view class="topbar-text">
+      <view class="topbar-title">历史曲线</view>
+      <view class="topbar-subtitle">最近 6 小时 · {{rangeText}}</view>
+    </view>
+    <button class="icon-button" bindtap="loadHistory" loading="{{loading}}">
+      <image class="icon" src="/image/icon-refresh.svg" mode="aspectFit"></image>
+    </button>
+  </view>
+
+  <view class="metric-tabs">
+    <button
+      wx:for="{{metrics}}"
+      wx:key="id"
+      class="metric-tab {{selectedId == item.id ? 'metric-tab-active' : ''}}"
+      data-id="{{item.id}}"
+      bindtap="selectMetric"
+    >
+      <image src="{{item.icon}}" mode="aspectFit"></image>
+      <text>{{item.title}}</text>
+    </button>
+  </view>
+
+  <view wx:if="{{error}}" class="error">{{error}}</view>
+
+  <view class="stat-grid">
+    <view wx:for="{{statCards}}" wx:key="label" class="stat-card">
+      <text class="stat-label">{{item.label}}</text>
+      <view class="stat-value">
+        <text>{{item.value}}</text>
+        <text class="stat-unit">{{item.unit}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="chart-panel">
+    <view class="chart-title">
+      <view>
+        <text>{{selectedMetric.title}}</text>
+        <text class="chart-unit">{{selectedMetric.unit}}</text>
+      </view>
+      <text class="chart-count">{{chartCountText}}</text>
+    </view>
+    <view class="chart-area">
+      <canvas
+        canvas-id="historyChart"
+        class="history-canvas"
+        style="width: {{chartWidth}}px; height: {{chartHeight}}px;"
+      ></canvas>
+      <view wx:if="{{points.length == 0 && !loading}}" class="chart-empty">暂无历史数据</view>
+    </view>
+  </view>
+
+  <view wx:if="{{recentPoints.length > 0}}" class="recent-panel">
+    <view class="recent-title">最近记录</view>
+    <view class="recent-list">
+      <view wx:for="{{recentPoints}}" wx:key="key" class="recent-row">
+        <text>{{item.time}}</text>
+        <text>{{item.valueText}} {{selectedMetric.unit}}</text>
+      </view>
+    </view>
+  </view>
+</view>

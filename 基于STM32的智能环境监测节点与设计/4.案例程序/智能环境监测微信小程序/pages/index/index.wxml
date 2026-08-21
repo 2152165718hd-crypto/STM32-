@@ -1,0 +1,66 @@
+<view class="page dashboard" style="padding-top: {{safeTop}}px;">
+  <view class="topbar">
+    <view class="topbar-text">
+      <view class="topbar-title">环境监测网关</view>
+      <view class="topbar-subtitle">OneNET实时数据 · {{lastUpdate}}</view>
+    </view>
+    <button class="icon-button" bindtap="refresh" loading="{{loading}}">
+      <image class="icon" src="/image/icon-refresh.svg" mode="aspectFit"></image>
+    </button>
+  </view>
+
+  <view class="status-panel {{statusMode == 'alarm' ? 'status-danger' : ''}} {{statusMode == 'offline' ? 'status-offline' : ''}}">
+    <view class="status-main">
+      <image class="status-icon" src="{{statusIcon}}" mode="aspectFit"></image>
+      <view class="status-copy">
+        <view class="status-title">{{statusTitle}}</view>
+        <view class="status-text">{{statusText}}</view>
+      </view>
+    </view>
+    <view class="status-pill">{{configured ? '已配置' : '待配置'}}</view>
+  </view>
+
+  <view wx:if="{{error}}" class="error">{{error}}</view>
+  <view wx:if="{{!loading && !error && !hasData}}" class="empty-state">云端已连通，但当前设备还没有可展示的最新属性。请确认主机已成功连接 OneNET 并完成属性上报。</view>
+
+  <view class="quick-actions">
+    <button class="primary-button" bindtap="goThreshold">
+      <image class="button-icon" src="/image/icon-threshold.svg" mode="aspectFit"></image>
+      阈值设置
+    </button>
+    <button class="secondary-button" bindtap="goHistory">
+      <image class="button-icon" src="/image/icon-history.svg" mode="aspectFit"></image>
+      历史曲线
+    </button>
+  </view>
+
+  <view class="metric-grid">
+    <view wx:for="{{cards}}" wx:key="id" class="metric-card {{item.active ? '' : 'metric-empty'}}">
+      <view class="metric-head">
+        <image class="metric-icon" src="{{item.icon}}" mode="aspectFit"></image>
+        <text>{{item.title}}</text>
+      </view>
+      <view class="metric-value">
+        <text>{{item.value}}</text>
+        <text class="metric-unit">{{item.unit}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-title">当前报警</view>
+  <view wx:if="{{alarmList.length == 0}}" class="empty">暂无报警</view>
+  <view wx:else class="alarm-list">
+    <view wx:for="{{alarmList}}" wx:key="*this" class="alarm-item">
+      <image class="alarm-icon" src="/image/icon-alarm.svg" mode="aspectFit"></image>
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+  <view class="section-title">报警阈值</view>
+  <view class="threshold-strip">
+    <view wx:for="{{thresholds}}" wx:key="id" class="threshold-chip">
+      <image src="{{item.icon}}" mode="aspectFit"></image>
+      <text>{{item.title}} {{item.value}}{{item.unit}}</text>
+    </view>
+  </view>
+</view>

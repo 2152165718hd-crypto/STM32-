@@ -1,0 +1,111 @@
+page {
+  min-height: 100vh;
+  color: #1d2530;
+  background: #f5f7fb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+button::after {
+  border: 0;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 0 28rpx 42rpx;
+  box-sizing: border-box;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 88rpx;
+  gap: 18rpx;
+}
+
+.topbar-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar-title {
+  font-size: 38rpx;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.topbar-subtitle {
+  margin-top: 6rpx;
+  color: #6d7786;
+  font-size: 24rpx;
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 72rpx;
+  min-width: 72rpx;
+  max-width: 72rpx;
+  height: 72rpx;
+  padding: 0;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 8rpx 22rpx rgba(30, 48, 73, 0.08);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.icon {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rpx;
+  min-height: 76rpx;
+  padding: 0 24rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.primary-button {
+  color: #ffffff;
+  background: #1677ff;
+}
+
+.secondary-button {
+  color: #1d2530;
+  background: #ffffff;
+}
+
+.empty,
+.error {
+  margin-top: 24rpx;
+  padding: 22rpx 24rpx;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+}
+
+.empty {
+  color: #677487;
+  background: #ffffff;
+}
+
+.error {
+  color: #b42318;
+  background: #fff0ee;
+}

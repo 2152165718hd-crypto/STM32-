@@ -1,0 +1,8 @@
+baseUrl=https://iot-api.heclouds.com
+productId=YOUR_PRODUCT_ID
+deviceName=YOUR_DEVICE_NAME
+authorization=YOUR_ONENET_AUTHORIZATION
+refreshIntervalMs=3000
+staleDataMs=12000
+historyHours=6
+historyLimit=60
