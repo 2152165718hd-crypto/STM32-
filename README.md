@@ -22,6 +22,21 @@
 > 
 > 💬 **有需求随时联系，合作添加微信**：<kbd><b> a2152165718 </b></kbd> （添加时请备注：**单片机设计 / 成品咨询**）
 
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="260">
+<img src="./docs/wechat_qr.png" width="200" alt="微信二维码"><br>
+<sub>📱 <b>微信扫一扫快速添加好友</b></sub><br>
+<sub>微信号：<code>a2152165718</code></sub><br>
+<sub>（备注：<b>单片机设计 / 成品咨询</b>）</sub>
+</td>
+</tr>
+</table>
+
+</div>
+
 ---
 
 ### 🔄 【关于本仓库与网盘资料实时更新说明】
