@@ -1,0 +1,12 @@
+D:\Desktop\外包\基于声音与振动的家庭安防预警系统\4.案例程序\基于声音与振动的家庭安防预警系统_TCP\PC_TcpUpper\bin\Debug\PC_TcpUpper.exe
+D:\Desktop\外包\基于声音与振动的家庭安防预警系统\4.案例程序\基于声音与振动的家庭安防预警系统_TCP\PC_TcpUpper\bin\Debug\PC_TcpUpper.pdb
+D:\Desktop\外包\基于声音与振动的家庭安防预警系统\4.案例程序\基于声音与振动的家庭安防预警系统_TCP\PC_TcpUpper\bin\Debug\mscorlib.dll
+D:\Desktop\外包\基于声音与振动的家庭安防预警系统\4.案例程序\基于声音与振动的家庭安防预警系统_TCP\PC_TcpUpper\bin\Debug\zh-Hans\mscorlib.resources.dll
+D:\Desktop\外包\基于声音与振动的家庭安防预警系统\4.案例程序\基于声音与振动的家庭安防预警系统_TCP\PC_TcpUpper\bin\Debug\normidna.nlp
+D:\Desktop\外包\基于声音与振动的家庭安防预警系统\4.案例程序\基于声音与振动的家庭安防预警系统_TCP\PC_TcpUpper\bin\Debug\normnfc.nlp
+D:\Desktop\外包\基于声音与振动的家庭安防预警系统\4.案例程序\基于声音与振动的家庭安防预警系统_TCP\PC_TcpUpper\bin\Debug\normnfd.nlp
+D:\Desktop\外包\基于声音与振动的家庭安防预警系统\4.案例程序\基于声音与振动的家庭安防预警系统_TCP\PC_TcpUpper\bin\Debug\normnfkc.nlp
+D:\Desktop\外包\基于声音与振动的家庭安防预警系统\4.案例程序\基于声音与振动的家庭安防预警系统_TCP\PC_TcpUpper\bin\Debug\normnfkd.nlp
+D:\Desktop\外包\基于声音与振动的家庭安防预警系统\4.案例程序\基于声音与振动的家庭安防预警系统_TCP\PC_TcpUpper\obj\Debug\PC_TcpUpper.csprojResolveAssemblyReference.cache
+D:\Desktop\外包\基于声音与振动的家庭安防预警系统\4.案例程序\基于声音与振动的家庭安防预警系统_TCP\PC_TcpUpper\obj\Debug\PC_TcpUpper.exe
+D:\Desktop\外包\基于声音与振动的家庭安防预警系统\4.案例程序\基于声音与振动的家庭安防预警系统_TCP\PC_TcpUpper\obj\Debug\PC_TcpUpper.pdb
