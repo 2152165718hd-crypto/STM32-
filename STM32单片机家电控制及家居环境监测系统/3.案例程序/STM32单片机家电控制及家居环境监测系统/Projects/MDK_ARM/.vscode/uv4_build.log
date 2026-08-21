@@ -1,0 +1,19 @@
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Program Files (x86)\KEIL\MDK\ARM\ARMCC\Bin'
+Build target 'Temolate'
+compiling Menu.c...
+..\..\Drivers\APPLICATION\Menu\Menu.c(911): warning:  #223-D: function "strtol" declared implicitly
+          long val = strtol(data_str + 6, NULL, 10);
+..\..\Drivers\APPLICATION\Menu\Menu.c(924): warning:  #223-D: function "strtol" declared implicitly
+          long left_val = strtol(data_str + 6, &end_ptr, 10);
+..\..\Drivers\APPLICATION\Menu\Menu.c(37): warning:  #550-D: variable "g_motor_direction"  was set but never used
+  static int8_t g_motor_direction = 0;    /* 1=正转(开�?), -1=反转(关帘) */
+..\..\Drivers\APPLICATION\Menu\Menu.c(60): warning:  #550-D: variable "g_host_led_state"  was set but never used
+  static uint8_t g_host_led_state = 0;
+..\..\Drivers\APPLICATION\Menu\Menu.c(61): warning:  #550-D: variable "g_cool_led_state"  was set but never used
+  static uint8_t g_cool_led_state = 0;
+..\..\Drivers\APPLICATION\Menu\Menu.c: 5 warnings, 0 errors
+linking...
+Program Size: Code=32422 RO-data=3134 RW-data=220 ZI-data=9772  
+FromELF: creating hex file...
+"..\..\Output\Objects\Project.axf" - 0 Error(s), 5 Warning(s).
+Build Time Elapsed:  00:00:01

@@ -1,0 +1,15 @@
+上报格式（设备→手机/PC）
+Temp:25.3,Light:2048,Sound:2500,Rain:4000\r\n
+
+控制命令（手机/PC→设备）
+      命令	                                      功能                   		命令                         		功能
+LED1_ON/OFF	                   卧室1灯	         	LED4_ON/OFF	                      厕所灯
+LED2_ON/OFF	                   卧室2灯	         	 LED5_ON/OFF	                     制热指示灯
+LED3_ON/OFF	                   卧室3灯	           	LED6_ON/OFF	                     制冷指示灯
+AC_ON/OFF   	                   空调开关	          	  RC_ON/OFF	                             电饭煲开关
+CURTAIN_OPEN/CLOSE	   窗帘	               	   WINDOW_OPEN/CLOSE	             窗户
+SERVO_90				  舵机角度(0~180)		MOTOR:50,50	                     电机速度(L,R)
+
+
+应答格式
+OK:<原始命令>\r\n
