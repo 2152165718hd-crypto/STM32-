@@ -49,3 +49,10 @@ $RECYCLE.BIN/
 *.swo
 *~
 .DS_Store
+# 超过 GitHub 100MB 限制的大文件
+*.mp4
+*.dll
+*.exe
+*.zip
+*.rar
+*.7z
