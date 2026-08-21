@@ -1,0 +1,453 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/23/2013  23:02:39  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\\C51\BIN\BL51.EXE 海振电子 PCF8563模块程序.obj, uart.obj, PCF8563.obj TO 海振电子 PCF8563模块程序 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  海振电子 PCF8563模块程序.obj (海振电子_PCF8563模块程序)
+  uart.obj (UART)
+  PCF8563.obj (PCF8563)
+  D:\\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\\C51\LIB\C51S.LIB (?C?CSTOPTR)
+
+
+LINK MAP OF MODULE:  海振电子 PCF8563模块程序 (海振电子_PCF8563模块程序)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0017H     UNIT         ?DT?海振电子_PCF8563模块程序
+                    001FH     0001H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?海振电子_PCF8563模块程序
+                    0020H.1   0000H.7                *** GAP ***
+            DATA    0021H     000AH     UNIT         _DATA_GROUP_
+            DATA    002BH     0006H     UNIT         ?DT?PCF8563
+            IDATA   0031H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0044H     UNIT         ?PR?P8563_READ?PCF8563
+            CODE    0047H     0042H     UNIT         ?PR?_READDATA1?PCF8563
+            CODE    0089H     002AH     UNIT         ?PR?_WRITEBYTE?PCF8563
+            CODE    00B3H     002AH     UNIT         ?PR?P8563_SETTIME?PCF8563
+            CODE    00DDH     0022H     UNIT         ?C?LIB_CODE
+            CODE    00FFH     001BH     UNIT         ?PR?_UART_TEST?UART
+            CODE    011AH     001AH     UNIT         ?PR?READBYTE?PCF8563
+            CODE    0134H     0016H     UNIT         ?PR?UART_INIT?UART
+            CODE    014AH     0016H     UNIT         ?PR?WAITACK?PCF8563
+            CODE    0160H     0015H     UNIT         ?PR?P8563_INIT?PCF8563
+            CODE    0175H     0011H     UNIT         ?PR?MAIN?海振电子_PCF8563模块程序
+            CODE    0186H     000FH     UNIT         ?PR?START?PCF8563
+            CODE    0195H     000CH     UNIT         ?PR?DELAY?PCF8563
+            CODE    01A1H     000CH     UNIT         ?PR?STOP?PCF8563
+            CODE    01ADH     000CH     UNIT         ?C_C51STARTUP
+            CODE    01B9H     000BH     UNIT         ?PR?_WRITEACK?PCF8563
+            CODE    01C4H     000BH     UNIT         ?PR?_WRITEDATA?PCF8563
+            CODE    01CFH     000BH     UNIT         ?PR?P8563_GETTIME?PCF8563
+            CODE    01DAH     0006H     UNIT         ?CO?PCF8563
+
+
+
+OVERLAY MAP OF MODULE:   海振电子 PCF8563模块程序 (海振电子_PCF8563模块程序)
+
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2013  23:02:39  PAGE 2
+
+
+SEGMENT                                     DATA_GROUP 
+  +--> CALLED SEGMENT                     START    LENGTH
+---------------------------------------------------------
+?C_C51STARTUP                             -----    -----
+  +--> ?PR?MAIN?海振电子_PCF8563模块程序
+
+?PR?MAIN?海振电子_PCF8563模块程序         -----    -----
+  +--> ?PR?UART_INIT?UART
+  +--> ?PR?P8563_INIT?PCF8563
+  +--> ?PR?P8563_GETTIME?PCF8563
+
+?PR?P8563_INIT?PCF8563                    -----    -----
+  +--> ?CO?PCF8563
+  +--> ?PR?P8563_SETTIME?PCF8563
+
+?PR?P8563_SETTIME?PCF8563                 -----    -----
+  +--> ?PR?_WRITEDATA?PCF8563
+
+?PR?_WRITEDATA?PCF8563                    -----    -----
+  +--> ?PR?_WRITEBYTE?PCF8563
+  +--> ?PR?STOP?PCF8563
+
+?PR?_WRITEBYTE?PCF8563                    -----    -----
+  +--> ?PR?START?PCF8563
+  +--> ?PR?DELAY?PCF8563
+  +--> ?PR?WAITACK?PCF8563
+
+?PR?START?PCF8563                         -----    -----
+  +--> ?PR?DELAY?PCF8563
+
+?PR?WAITACK?PCF8563                       -----    -----
+  +--> ?PR?DELAY?PCF8563
+  +--> ?PR?STOP?PCF8563
+
+?PR?STOP?PCF8563                          -----    -----
+  +--> ?PR?DELAY?PCF8563
+
+?PR?P8563_GETTIME?PCF8563                 -----    -----
+  +--> ?PR?P8563_READ?PCF8563
+
+?PR?P8563_READ?PCF8563                    0021H    0007H
+  +--> ?PR?_READDATA1?PCF8563
+  +--> ?PR?_UART_TEST?UART
+
+?PR?_READDATA1?PCF8563                    0028H    0003H
+  +--> ?PR?_WRITEBYTE?PCF8563
+  +--> ?PR?START?PCF8563
+  +--> ?PR?READBYTE?PCF8563
+  +--> ?PR?_WRITEACK?PCF8563
+  +--> ?PR?STOP?PCF8563
+
+?PR?READBYTE?PCF8563                      -----    -----
+  +--> ?PR?DELAY?PCF8563
+
+?PR?_WRITEACK?PCF8563                     -----    -----
+  +--> ?PR?DELAY?PCF8563
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2013  23:02:39  PAGE 3
+
+
+
+
+SYMBOL TABLE OF MODULE:  海振电子 PCF8563模块程序 (海振电子_PCF8563模块程序)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        海振电子_PCF8563模块程序
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:0020H.0       PUBLIC        CmdValid
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0175H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:0008H         PUBLIC        Rx_Byte
+  D:0009H         PUBLIC        RX_buf
+  D:0013H         PUBLIC        TX_buf
+  D:001DH         PUBLIC        jj
+  D:00E1H         PUBLIC        WDT_CONTR
+  D:001EH         PUBLIC        Length
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0175H         LINE#         13
+  C:0175H         LINE#         14
+  C:0175H         LINE#         15
+  C:0178H         LINE#         17
+  C:017BH         LINE#         18
+  C:017EH         LINE#         19
+  C:017EH         LINE#         20
+  C:017EH         LINE#         22
+  C:0181H         LINE#         23
+  C:0184H         LINE#         29
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        海振电子_PCF8563模块程序
+
+  -------         MODULE        UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  B:00A8H.4       PUBLIC        ES
+  D:00B8H         PUBLIC        IP
+  B:0098H.1       PUBLIC        TI
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:008DH         PUBLIC        TH1
+  B:0098H.7       PUBLIC        SM0
+  B:0098H.6       PUBLIC        SM1
+  D:008BH         PUBLIC        TL1
+  C:0134H         PUBLIC        uart_init
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2013  23:02:39  PAGE 4
+
+
+  B:0088H.6       PUBLIC        TR1
+  C:00FFH         PUBLIC        _uart_test
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          UART_INIT
+  C:0134H         LINE#         3
+  C:0134H         LINE#         4
+  C:0134H         LINE#         5
+  C:0137H         LINE#         6
+  C:013AH         LINE#         7
+  C:013DH         LINE#         8
+  C:013FH         LINE#         9
+  C:0141H         LINE#         11
+  C:0143H         LINE#         12
+  C:0145H         LINE#         13
+  C:0147H         LINE#         14
+  C:0149H         LINE#         16
+  -------         ENDPROC       UART_INIT
+  -------         PROC          _UART_TEST
+  D:0007H         SYMBOL        length
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:00FFH         LINE#         17
+  C:00FFH         LINE#         18
+  C:00FFH         LINE#         21
+  C:0106H         LINE#         22
+  C:0106H         LINE#         23
+  C:0108H         LINE#         24
+  C:010FH         LINE#         25
+  C:0112H         LINE#         26
+  C:0114H         LINE#         27
+  C:0117H         LINE#         28
+  C:0119H         LINE#         29
+  -------         ENDPROC       _UART_TEST
+  -------         ENDMOD        UART
+
+  -------         MODULE        PCF8563
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:0003H         PUBLIC        P8563_Read
+  C:00B3H         PUBLIC        P8563_settime
+  D:00A8H         PUBLIC        IE
+  C:0186H         PUBLIC        Start
+  D:00B8H         PUBLIC        IP
+  C:01A1H         PUBLIC        Stop
+  C:01C4H         PUBLIC        _writeData
+  C:01DAH         PUBLIC        c8563_Store
+  C:0047H         PUBLIC        _ReadData1
+  D:002BH         PUBLIC        g8563_Store
+  D:0098H         PUBLIC        SCON
+  C:011AH         PUBLIC        Readbyte
+  D:0088H         PUBLIC        TCON
+  C:0160H         PUBLIC        P8563_init
+  B:0090H.0       PUBLIC        SDA
+  C:01B9H         PUBLIC        _WriteACK
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2013  23:02:39  PAGE 5
+
+
+  B:0090H.1       PUBLIC        SCL
+  C:0095H         PUBLIC        _writebyte
+  C:014AH         PUBLIC        WaitACK
+  D:00C8H         PUBLIC        T2CON
+  C:019AH         PUBLIC        Delay
+  D:00D0H         PUBLIC        PSW
+  C:01CFH         PUBLIC        P8563_gettime
+  C:0195H         SYMBOL        L?0035
+  -------         PROC          L?0034
+  -------         ENDPROC       L?0034
+  C:0195H         SYMBOL        L?0035
+  -------         PROC          DELAY
+  C:019AH         LINE#         17
+  C:019AH         LINE#         18
+  C:019AH         LINE#         19
+  C:01A0H         LINE#         20
+  -------         ENDPROC       DELAY
+  -------         PROC          START
+  C:0186H         LINE#         24
+  C:0186H         LINE#         25
+  C:0186H         LINE#         26
+  C:0188H         LINE#         27
+  C:018AH         LINE#         28
+  C:018DH         LINE#         29
+  C:018FH         LINE#         30
+  C:0192H         LINE#         31
+  C:0194H         LINE#         32
+  -------         ENDPROC       START
+  -------         PROC          STOP
+  C:01A1H         LINE#         36
+  C:01A1H         LINE#         37
+  C:01A1H         LINE#         38
+  C:01A3H         LINE#         39
+  C:01A5H         LINE#         40
+  C:01A5H         LINE#         41
+  C:01A5H         LINE#         42
+  C:01A8H         LINE#         43
+  C:01AAH         LINE#         44
+  -------         ENDPROC       STOP
+  -------         PROC          _WRITEACK
+  D:0007H         SYMBOL        ack
+  C:01B9H         LINE#         49
+  C:01B9H         LINE#         50
+  C:01B9H         LINE#         51
+  C:01BEH         LINE#         52
+  C:01BEH         LINE#         53
+  C:01BEH         LINE#         54
+  C:01C1H         LINE#         55
+  C:01C3H         LINE#         56
+  -------         ENDPROC       _WRITEACK
+  -------         PROC          WAITACK
+  -------         DO            
+  D:0007H         SYMBOL        errtime
+  -------         ENDDO         
+  C:014AH         LINE#         60
+  C:014AH         LINE#         61
+  C:014AH         LINE#         62
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2013  23:02:39  PAGE 6
+
+
+  C:014CH         LINE#         63
+  C:014EH         LINE#         64
+  C:014EH         LINE#         65
+  C:014EH         LINE#         66
+  C:0151H         LINE#         67
+  C:0154H         LINE#         68
+  C:0154H         LINE#         69
+  C:0156H         LINE#         70
+  C:0156H         LINE#         71
+  C:0159H         LINE#         72
+  C:015BH         LINE#         73
+  C:015DH         LINE#         74
+  -------         ENDPROC       WAITACK
+  -------         PROC          L?0033
+  -------         ENDPROC       L?0033
+  -------         PROC          _WRITEBYTE
+  D:0007H         SYMBOL        wdata
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0095H         LINE#         80
+  C:0095H         LINE#         81
+  C:0095H         LINE#         83
+  C:0097H         LINE#         84
+  C:0097H         LINE#         85
+  C:009BH         LINE#         86
+  C:009FH         LINE#         88
+  C:00A1H         LINE#         89
+  C:00A5H         LINE#         90
+  C:00A7H         LINE#         91
+  C:00AAH         LINE#         92
+  C:00ACH         LINE#         93
+  C:00B0H         LINE#         94
+  -------         ENDPROC       _WRITEBYTE
+  -------         PROC          READBYTE
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0007H         SYMBOL        bytedata
+  -------         ENDDO         
+  C:011AH         LINE#         100
+  C:011AH         LINE#         101
+  C:011AH         LINE#         103
+  C:011CH         LINE#         104
+  C:011EH         LINE#         105
+  C:011EH         LINE#         106
+  C:0120H         LINE#         107
+  C:0124H         LINE#         108
+  C:012AH         LINE#         109
+  C:012CH         LINE#         110
+  C:012FH         LINE#         111
+  C:0133H         LINE#         112
+  C:0133H         LINE#         113
+  -------         ENDPROC       READBYTE
+  -------         PROC          _WRITEDATA
+  D:0004H         SYMBOL        address
+  D:0005H         SYMBOL        mdata
+  C:01C4H         LINE#         117
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2013  23:02:39  PAGE 7
+
+
+  C:01C4H         LINE#         118
+  C:01C4H         LINE#         119
+  C:01C4H         LINE#         120
+  C:01C4H         LINE#         121
+  C:01C7H         LINE#         122
+  C:01CCH         LINE#         123
+  -------         ENDPROC       _WRITEDATA
+  -------         PROC          _READDATA1
+  D:0004H         SYMBOL        address
+  D:0005H         SYMBOL        count
+  D:0028H         SYMBOL        buff
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0047H         LINE#         141
+  C:004DH         LINE#         142
+  C:004DH         LINE#         144
+  C:004DH         LINE#         145
+  C:004DH         LINE#         146
+  C:0050H         LINE#         147
+  C:0053H         LINE#         148
+  C:0058H         LINE#         149
+  C:005FH         LINE#         150
+  C:005FH         LINE#         151
+  C:0071H         LINE#         152
+  C:0079H         LINE#         153
+  C:007EH         LINE#         154
+  C:0081H         LINE#         155
+  C:0086H         LINE#         156
+  -------         ENDPROC       _READDATA1
+  -------         PROC          P8563_READ
+  -------         DO            
+  D:0021H         SYMBOL        time
+  -------         ENDDO         
+  C:0003H         LINE#         161
+  C:0003H         LINE#         162
+  C:0003H         LINE#         164
+  C:0010H         LINE#         165
+  C:0016H         LINE#         166
+  C:001CH         LINE#         167
+  C:0022H         LINE#         168
+  C:0028H         LINE#         169
+  C:002EH         LINE#         170
+  C:0031H         LINE#         172
+  C:0034H         LINE#         173
+  C:0036H         LINE#         174
+  C:0039H         LINE#         175
+  C:003CH         LINE#         176
+  C:003FH         LINE#         177
+  C:0042H         LINE#         178
+  -------         ENDPROC       P8563_READ
+  -------         PROC          P8563_GETTIME
+  C:01CFH         LINE#         183
+  C:01CFH         LINE#         184
+  C:01CFH         LINE#         185
+  C:01D2H         LINE#         186
+  C:01D6H         LINE#         187
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/23/2013  23:02:39  PAGE 8
+
+
+  C:01D9H         LINE#         188
+  -------         ENDPROC       P8563_GETTIME
+  -------         PROC          P8563_SETTIME
+  C:00B3H         LINE#         192
+  C:00B3H         LINE#         193
+  C:00B3H         LINE#         195
+  C:00BAH         LINE#         196
+  C:00C1H         LINE#         197
+  C:00C8H         LINE#         198
+  C:00CFH         LINE#         199
+  C:00D6H         LINE#         200
+  -------         ENDPROC       P8563_SETTIME
+  -------         PROC          P8563_INIT
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0160H         LINE#         205
+  C:0160H         LINE#         206
+  C:0160H         LINE#         209
+  C:0172H         LINE#         210
+  -------         ENDPROC       P8563_INIT
+  -------         ENDMOD        PCF8563
+
+  -------         MODULE        ?C?CSTOPTR
+  C:00DDH         PUBLIC        ?C?CSTOPTR
+  -------         ENDMOD        ?C?CSTOPTR
+
+Program Size: data=48.1 xdata=0 code=480
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

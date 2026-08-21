@@ -1,0 +1,1421 @@
+{
+  "version": "1.0",
+  "profile": {
+    "industryId": "2",
+    "sceneId": "49",
+    "categoryId": "1151",
+    "productId": "Vk99hTUKo2"
+  },
+  "properties": [
+    {
+      "identifier": "active_locker_id",
+      "name": "当前操作柜号",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "当前正在开门或操作的柜号，0 表示无",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "16",
+          "min": "0",
+          "step": "1",
+          "unit": "号"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "alarm_status",
+      "name": "报警状态",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "当前主报警状态",
+      "dataType": {
+        "type": "enum",
+        "specs": {
+          "0": "正常",
+          "1": "柜门超时未关",
+          "2": "存储故障",
+          "3": "人脸模块故障",
+          "4": "继电器故障",
+          "5": "RTC故障",
+          "6": "网络故障"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "buzzer_active",
+      "name": "蜂鸣器状态",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "蜂鸣器是否正在报警",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "响铃",
+          "false": "关闭"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "cloud_connected",
+      "name": "云端连接状态",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "设备侧 MQTT 连接状态",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "已连接",
+          "false": "未连接"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "current_operation",
+      "name": "当前操作类型",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "当前正在执行的业务操作",
+      "dataType": {
+        "type": "enum",
+        "specs": {
+          "0": "无",
+          "1": "存物",
+          "2": "取物",
+          "3": "管理员开柜",
+          "4": "清空全部",
+          "5": "导出记录"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "device_state",
+      "name": "设备状态",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "储物柜主业务状态",
+      "dataType": {
+        "type": "enum",
+        "specs": {
+          "0": "初始化",
+          "1": "空闲",
+          "2": "存物中",
+          "3": "取物中",
+          "4": "管理员模式",
+          "5": "柜门打开",
+          "6": "记录导出中",
+          "7": "维护模式",
+          "8": "故障"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "device_time",
+      "name": "设备时间",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "RTC 当前时间，格式 YYYY-MM-DD HH:mm:ss",
+      "dataType": {
+        "type": "string",
+        "specs": {
+          "length": 32
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "door_open",
+      "name": "柜门打开状态",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "任一柜门打开时为 true",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "已打开",
+          "false": "已关闭"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "door_open_elapsed_sec",
+      "name": "柜门已打开时长",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "当前柜门连续打开秒数",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "86400",
+          "min": "0",
+          "step": "1",
+          "unit": "s"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "door_timeout_sec",
+      "name": "门超时报警时间",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "柜门打开超过该秒数后触发报警",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "300",
+          "min": "10",
+          "step": "1",
+          "unit": "s"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "firmware_version",
+      "name": "固件版本",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "当前运行固件版本",
+      "dataType": {
+        "type": "string",
+        "specs": {
+          "length": 64
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "free_count",
+      "name": "空闲柜格数",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "当前空闲柜格数量",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "16",
+          "min": "0",
+          "step": "1",
+          "unit": "个"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "last_error_message",
+      "name": "最近错误信息",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "最近一次错误的人类可读描述",
+      "dataType": {
+        "type": "string",
+        "specs": {
+          "length": 128
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "last_record",
+      "name": "最近操作记录",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "最近一次业务操作摘要",
+      "dataType": {
+        "type": "struct",
+        "specs": [
+          {
+            "name": "操作类型",
+            "identifier": "op",
+            "dataType": {
+              "type": "enum",
+              "specs": {
+                "1": "存物",
+                "2": "取物",
+                "3": "管理员开柜",
+                "4": "清空全部",
+                "5": "门超时报警"
+              }
+            }
+          },
+          {
+            "name": "柜号",
+            "identifier": "locker_id",
+            "dataType": {
+              "type": "int32",
+              "specs": {
+                "max": "16",
+                "min": "0",
+                "step": "1",
+                "unit": "号"
+              }
+            }
+          },
+          {
+            "name": "人脸ID",
+            "identifier": "face_id",
+            "dataType": {
+              "type": "int32",
+              "specs": {
+                "max": "32767",
+                "min": "-1",
+                "step": "1",
+                "unit": ""
+              }
+            }
+          },
+          {
+            "name": "结果",
+            "identifier": "result",
+            "dataType": {
+              "type": "bool",
+              "specs": {
+                "true": "成功",
+                "false": "失败"
+              }
+            }
+          },
+          {
+            "name": "时间",
+            "identifier": "time",
+            "dataType": {
+              "type": "string",
+              "specs": {
+                "length": 32
+              }
+            }
+          }
+        ]
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "locker_bitmap",
+      "name": "柜格占用位图",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "bit0-bit15 对应 1-16 号柜，0 空闲，1 占用",
+      "dataType": {
+        "type": "bitMap",
+        "specs": {
+          "length": 16,
+          "define": [
+            {
+              "0": "1号柜空闲",
+              "1": "1号柜占用",
+              "bit": 0
+            },
+            {
+              "0": "2号柜空闲",
+              "1": "2号柜占用",
+              "bit": 1
+            },
+            {
+              "0": "3号柜空闲",
+              "1": "3号柜占用",
+              "bit": 2
+            },
+            {
+              "0": "4号柜空闲",
+              "1": "4号柜占用",
+              "bit": 3
+            },
+            {
+              "0": "5号柜空闲",
+              "1": "5号柜占用",
+              "bit": 4
+            },
+            {
+              "0": "6号柜空闲",
+              "1": "6号柜占用",
+              "bit": 5
+            },
+            {
+              "0": "7号柜空闲",
+              "1": "7号柜占用",
+              "bit": 6
+            },
+            {
+              "0": "8号柜空闲",
+              "1": "8号柜占用",
+              "bit": 7
+            },
+            {
+              "0": "9号柜空闲",
+              "1": "9号柜占用",
+              "bit": 8
+            },
+            {
+              "0": "10号柜空闲",
+              "1": "10号柜占用",
+              "bit": 9
+            },
+            {
+              "0": "11号柜空闲",
+              "1": "11号柜占用",
+              "bit": 10
+            },
+            {
+              "0": "12号柜空闲",
+              "1": "12号柜占用",
+              "bit": 11
+            },
+            {
+              "0": "13号柜空闲",
+              "1": "13号柜占用",
+              "bit": 12
+            },
+            {
+              "0": "14号柜空闲",
+              "1": "14号柜占用",
+              "bit": 13
+            },
+            {
+              "0": "15号柜空闲",
+              "1": "15号柜占用",
+              "bit": 14
+            },
+            {
+              "0": "16号柜空闲",
+              "1": "16号柜占用",
+              "bit": 15
+            }
+          ]
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "locker_count",
+      "name": "柜格总数",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "本设备柜格数量，当前项目固定 16",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "64",
+          "min": "1",
+          "step": "1",
+          "unit": "个"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "locker_occupancy",
+      "name": "柜格占用数组",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "16 个柜格占用状态，数组下标 0 对应 1 号柜，0 空闲，1 占用",
+      "dataType": {
+        "type": "array",
+        "specs": {
+          "length": 16,
+          "type": "int32",
+          "specs": {
+            "max": "1",
+            "min": "0",
+            "step": "1",
+            "unit": ""
+          }
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "maintenance_mode",
+      "name": "维护模式",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "维护模式下拒绝普通用户存取物，仅允许管理员和云端维护服务",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开启",
+          "false": "关闭"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "protocol_version",
+      "name": "协议版本",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "设备端云平台通信协议版本",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "1",
+          "step": "1",
+          "unit": ""
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "record_count",
+      "name": "本地记录数",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "AT24C256 中保存的记录数量",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "64",
+          "min": "0",
+          "step": "1",
+          "unit": "条"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "remote_control_enabled",
+      "name": "远程控制使能",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "关闭后云端开柜、清空、重启等远程控制服务会被拒绝",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "允许",
+          "false": "禁止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "status_report_interval_sec",
+      "name": "状态上报间隔",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "设备空闲时完整属性周期上报间隔",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "3600",
+          "min": "5",
+          "step": "1",
+          "unit": "s"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "used_count",
+      "name": "已占用柜格数",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "当前已存物柜格数量",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "16",
+          "min": "0",
+          "step": "1",
+          "unit": "个"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "wifi_rssi",
+      "name": "WiFi信号强度",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "ESP-01S 当前 WiFi RSSI",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "0",
+          "min": "-100",
+          "step": "1",
+          "unit": "dBm"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "identifier": "alarm_event",
+      "name": "报警事件",
+      "functionType": "u",
+      "eventType": "info",
+      "desc": "报警产生和恢复事件",
+      "outputData": [
+        {
+          "identifier": "alarm_code",
+          "name": "报警代码",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "恢复正常",
+              "1": "柜门超时未关",
+              "2": "存储故障",
+              "3": "人脸模块故障",
+              "4": "继电器故障",
+              "5": "RTC故障",
+              "6": "网络故障"
+            }
+          }
+        },
+        {
+          "identifier": "active",
+          "name": "是否激活",
+          "dataType": {
+            "type": "bool",
+            "specs": {
+              "true": "报警中",
+              "false": "已恢复"
+            }
+          }
+        },
+        {
+          "identifier": "locker_id",
+          "name": "关联柜号",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "16",
+              "min": "0",
+              "step": "1",
+              "unit": "号"
+            }
+          }
+        },
+        {
+          "identifier": "message",
+          "name": "描述",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 128
+            }
+          }
+        },
+        {
+          "identifier": "timestamp",
+          "name": "时间",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 32
+            }
+          }
+        }
+      ],
+      "functionMode": "event",
+      "required": false
+    },
+    {
+      "identifier": "device_fault",
+      "name": "设备故障",
+      "functionType": "u",
+      "eventType": "info",
+      "desc": "设备模块级故障或恢复事件",
+      "outputData": [
+        {
+          "identifier": "module",
+          "name": "模块",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "1": "主控",
+              "2": "人脸模块",
+              "3": "EEPROM",
+              "4": "RTC",
+              "5": "继电器",
+              "6": "ESP-01S",
+              "7": "显示屏"
+            }
+          }
+        },
+        {
+          "identifier": "fault_code",
+          "name": "故障码",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "9999",
+              "min": "0",
+              "step": "1",
+              "unit": ""
+            }
+          }
+        },
+        {
+          "identifier": "active",
+          "name": "是否激活",
+          "dataType": {
+            "type": "bool",
+            "specs": {
+              "true": "故障中",
+              "false": "已恢复"
+            }
+          }
+        },
+        {
+          "identifier": "message",
+          "name": "描述",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 128
+            }
+          }
+        },
+        {
+          "identifier": "timestamp",
+          "name": "时间",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 32
+            }
+          }
+        }
+      ],
+      "functionMode": "event",
+      "required": false
+    },
+    {
+      "identifier": "door_event",
+      "name": "柜门事件",
+      "functionType": "u",
+      "eventType": "info",
+      "desc": "柜门打开、关闭、超时事件",
+      "outputData": [
+        {
+          "identifier": "action",
+          "name": "动作",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "1": "打开",
+              "2": "关闭",
+              "3": "超时"
+            }
+          }
+        },
+        {
+          "identifier": "locker_id",
+          "name": "柜号",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "16",
+              "min": "1",
+              "step": "1",
+              "unit": "号"
+            }
+          }
+        },
+        {
+          "identifier": "open_mode",
+          "name": "开门模式",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "1": "存物",
+              "2": "取物",
+              "3": "管理员",
+              "4": "云端管理员"
+            }
+          }
+        },
+        {
+          "identifier": "elapsed_sec",
+          "name": "打开时长",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "86400",
+              "min": "0",
+              "step": "1",
+              "unit": "s"
+            }
+          }
+        },
+        {
+          "identifier": "timestamp",
+          "name": "时间",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 32
+            }
+          }
+        }
+      ],
+      "functionMode": "event",
+      "required": false
+    },
+    {
+      "identifier": "operation_record",
+      "name": "操作记录",
+      "functionType": "u",
+      "eventType": "info",
+      "desc": "存物、取物、管理员开柜、清空全部、门超时报警等业务记录",
+      "outputData": [
+        {
+          "identifier": "record_id",
+          "name": "记录序号",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "2147483647",
+              "min": "0",
+              "step": "1",
+              "unit": ""
+            }
+          }
+        },
+        {
+          "identifier": "op",
+          "name": "操作类型",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "1": "存物",
+              "2": "取物",
+              "3": "管理员开柜",
+              "4": "清空全部",
+              "5": "门超时报警"
+            }
+          }
+        },
+        {
+          "identifier": "op_name",
+          "name": "操作名称",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 32
+            }
+          }
+        },
+        {
+          "identifier": "locker_id",
+          "name": "柜号",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "16",
+              "min": "0",
+              "step": "1",
+              "unit": "号"
+            }
+          }
+        },
+        {
+          "identifier": "face_id",
+          "name": "人脸ID",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "32767",
+              "min": "-1",
+              "step": "1",
+              "unit": ""
+            }
+          }
+        },
+        {
+          "identifier": "result",
+          "name": "结果",
+          "dataType": {
+            "type": "bool",
+            "specs": {
+              "true": "成功",
+              "false": "失败"
+            }
+          }
+        },
+        {
+          "identifier": "source",
+          "name": "来源",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "本地实时",
+              "1": "云端触发",
+              "2": "历史补传"
+            }
+          }
+        },
+        {
+          "identifier": "operator_id",
+          "name": "操作员标识",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 64
+            }
+          }
+        },
+        {
+          "identifier": "timestamp",
+          "name": "时间",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 32
+            }
+          }
+        }
+      ],
+      "functionMode": "event",
+      "required": false
+    },
+    {
+      "identifier": "record_export_done",
+      "name": "记录导出完成",
+      "functionType": "u",
+      "eventType": "info",
+      "desc": "历史记录补传完成事件",
+      "outputData": [
+        {
+          "identifier": "count",
+          "name": "导出数量",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "64",
+              "min": "0",
+              "step": "1",
+              "unit": "条"
+            }
+          }
+        },
+        {
+          "identifier": "result",
+          "name": "结果",
+          "dataType": {
+            "type": "bool",
+            "specs": {
+              "true": "成功",
+              "false": "失败"
+            }
+          }
+        },
+        {
+          "identifier": "message",
+          "name": "描述",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 128
+            }
+          }
+        },
+        {
+          "identifier": "timestamp",
+          "name": "时间",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 32
+            }
+          }
+        }
+      ],
+      "functionMode": "event",
+      "required": false
+    },
+    {
+      "identifier": "service_result",
+      "name": "服务执行结果",
+      "functionType": "u",
+      "eventType": "info",
+      "desc": "云端服务调用的异步执行结果",
+      "outputData": [
+        {
+          "identifier": "service",
+          "name": "服务",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "1": "查询状态",
+              "2": "远程开柜",
+              "3": "清除报警",
+              "4": "导出记录",
+              "5": "清空全部",
+              "6": "设置时间",
+              "7": "设备重启"
+            }
+          }
+        },
+        {
+          "identifier": "request_id",
+          "name": "请求ID",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 64
+            }
+          }
+        },
+        {
+          "identifier": "code",
+          "name": "结果码",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "999",
+              "min": "0",
+              "step": "1",
+              "unit": ""
+            }
+          }
+        },
+        {
+          "identifier": "message",
+          "name": "结果描述",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 128
+            }
+          }
+        },
+        {
+          "identifier": "locker_id",
+          "name": "柜号",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "16",
+              "min": "0",
+              "step": "1",
+              "unit": "号"
+            }
+          }
+        },
+        {
+          "identifier": "timestamp",
+          "name": "时间",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 32
+            }
+          }
+        }
+      ],
+      "functionMode": "event",
+      "required": false
+    }
+  ],
+  "services": [
+    {
+      "identifier": "clear_alarm",
+      "name": "清除报警",
+      "functionType": "u",
+      "desc": "清除当前报警并关闭蜂鸣器",
+      "callType": "async",
+      "input": [
+        {
+          "identifier": "operator_id",
+          "name": "操作员标识",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 64
+            }
+          }
+        }
+      ],
+      "output": [
+        {
+          "identifier": "code",
+          "name": "结果码",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "999",
+              "min": "0",
+              "step": "1",
+              "unit": ""
+            }
+          }
+        },
+        {
+          "identifier": "message",
+          "name": "结果描述",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 128
+            }
+          }
+        }
+      ],
+      "functionMode": "service",
+      "required": false
+    },
+    {
+      "identifier": "clear_all_lockers",
+      "name": "清空全部柜格",
+      "functionType": "u",
+      "desc": "危险维护操作：清空全部柜格状态并删除本地人脸绑定",
+      "callType": "async",
+      "input": [
+        {
+          "identifier": "confirm_code",
+          "name": "确认码",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 32
+            }
+          }
+        },
+        {
+          "identifier": "operator_id",
+          "name": "操作员标识",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 64
+            }
+          }
+        }
+      ],
+      "output": [
+        {
+          "identifier": "code",
+          "name": "结果码",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "999",
+              "min": "0",
+              "step": "1",
+              "unit": ""
+            }
+          }
+        },
+        {
+          "identifier": "message",
+          "name": "结果描述",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 128
+            }
+          }
+        }
+      ],
+      "functionMode": "service",
+      "required": false
+    },
+    {
+      "identifier": "export_records",
+      "name": "导出记录",
+      "functionType": "u",
+      "desc": "按历史顺序补传本地操作记录，记录内容通过 operation_record 事件上报",
+      "callType": "async",
+      "input": [
+        {
+          "identifier": "limit",
+          "name": "导出数量",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "64",
+              "min": "1",
+              "step": "1",
+              "unit": "条"
+            }
+          }
+        },
+        {
+          "identifier": "operator_id",
+          "name": "操作员标识",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 64
+            }
+          }
+        }
+      ],
+      "output": [
+        {
+          "identifier": "code",
+          "name": "结果码",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "999",
+              "min": "0",
+              "step": "1",
+              "unit": ""
+            }
+          }
+        },
+        {
+          "identifier": "count",
+          "name": "接受导出数量",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "64",
+              "min": "0",
+              "step": "1",
+              "unit": "条"
+            }
+          }
+        },
+        {
+          "identifier": "message",
+          "name": "结果描述",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 128
+            }
+          }
+        }
+      ],
+      "functionMode": "service",
+      "required": false
+    },
+    {
+      "identifier": "open_locker",
+      "name": "远程开柜",
+      "functionType": "u",
+      "desc": "云端管理员远程打开指定柜格",
+      "callType": "async",
+      "input": [
+        {
+          "identifier": "locker_id",
+          "name": "柜号",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "16",
+              "min": "1",
+              "step": "1",
+              "unit": "号"
+            }
+          }
+        },
+        {
+          "identifier": "operator_id",
+          "name": "操作员标识",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 64
+            }
+          }
+        },
+        {
+          "identifier": "reason",
+          "name": "开柜原因",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "1": "管理员巡检",
+              "2": "用户协助",
+              "3": "异常处理",
+              "4": "维护测试"
+            }
+          }
+        }
+      ],
+      "output": [
+        {
+          "identifier": "code",
+          "name": "结果码",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "999",
+              "min": "0",
+              "step": "1",
+              "unit": ""
+            }
+          }
+        },
+        {
+          "identifier": "message",
+          "name": "结果描述",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 128
+            }
+          }
+        }
+      ],
+      "functionMode": "service",
+      "required": false
+    },
+    {
+      "identifier": "query_status",
+      "name": "查询状态",
+      "functionType": "u",
+      "desc": "要求设备立即上报一次完整状态",
+      "callType": "async",
+      "input": [],
+      "output": [
+        {
+          "identifier": "code",
+          "name": "结果码",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "999",
+              "min": "0",
+              "step": "1",
+              "unit": ""
+            }
+          }
+        },
+        {
+          "identifier": "message",
+          "name": "结果描述",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 128
+            }
+          }
+        }
+      ],
+      "functionMode": "service",
+      "required": false
+    },
+    {
+      "identifier": "reboot_device",
+      "name": "设备重启",
+      "functionType": "u",
+      "desc": "远程重启控制器，需确认码",
+      "callType": "async",
+      "input": [
+        {
+          "identifier": "confirm_code",
+          "name": "确认码",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 32
+            }
+          }
+        }
+      ],
+      "output": [
+        {
+          "identifier": "code",
+          "name": "结果码",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "999",
+              "min": "0",
+              "step": "1",
+              "unit": ""
+            }
+          }
+        },
+        {
+          "identifier": "message",
+          "name": "结果描述",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 128
+            }
+          }
+        }
+      ],
+      "functionMode": "service",
+      "required": false
+    },
+    {
+      "identifier": "set_device_time",
+      "name": "设置设备时间",
+      "functionType": "u",
+      "desc": "云端校准设备 RTC 时间",
+      "callType": "async",
+      "input": [
+        {
+          "identifier": "time",
+          "name": "时间",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 32
+            }
+          }
+        }
+      ],
+      "output": [
+        {
+          "identifier": "code",
+          "name": "结果码",
+          "dataType": {
+            "type": "int32",
+            "specs": {
+              "max": "999",
+              "min": "0",
+              "step": "1",
+              "unit": ""
+            }
+          }
+        },
+        {
+          "identifier": "message",
+          "name": "结果描述",
+          "dataType": {
+            "type": "string",
+            "specs": {
+              "length": 128
+            }
+          }
+        }
+      ],
+      "functionMode": "service",
+      "required": false
+    }
+  ],
+  "combs": []
+}

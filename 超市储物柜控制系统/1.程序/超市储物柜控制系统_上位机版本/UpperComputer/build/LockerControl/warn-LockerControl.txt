@@ -1,0 +1,39 @@
+
+This file lists modules PyInstaller was not able to find. This does not
+necessarily mean these modules are required for running your program. Both
+Python's standard library and 3rd-party Python packages often conditionally
+import optional modules, some of which may be available only on certain
+platforms.
+
+Types of import:
+* top-level: imported at the top-level - look at these first
+* conditional: imported within an if-statement
+* delayed: imported within a function
+* optional: imported within a try-except-statement
+
+IMPORTANT: Do NOT post this list to the issue-tracker. Use it as a basis for
+            tracking down the missing module yourself. Thanks!
+
+missing module named 'collections.abc' - imported by _colorize (top-level), typing (top-level), traceback (top-level), logging (top-level), selectors (top-level), http.client (top-level), importlib.resources.readers (top-level), inspect (top-level), tracemalloc (top-level), PySide6.QtCore (top-level), PySide6.QtNetwork (top-level), PySide6.QtGui (top-level), PySide6.QtWidgets (top-level), PySide6.Qt3DCore (top-level), PySide6.QtOpenGL (top-level), PySide6.Qt3DRender (top-level), PySide6.Qt3DAnimation (top-level), PySide6.Qt3DExtras (top-level), PySide6.Qt3DInput (top-level), asyncio.base_events (top-level), multiprocessing.managers (top-level), asyncio.coroutines (top-level), PySide6.QtAsyncio.tasks (top-level), PySide6.QtAsyncio.events (top-level), typing_extensions (top-level), PySide6.QtAxContainer (top-level), PySide6.QtBluetooth (top-level), PySide6.QtQml (top-level), PySide6.QtQuick (top-level), PySide6.QtCanvasPainter (top-level), PySide6.QtCharts (top-level), PySide6.QtDBus (top-level), PySide6.QtDataVisualization (top-level), PySide6.QtDesigner (top-level), PySide6.QtGraphs (top-level), PySide6.QtHelp (top-level), PySide6.QtHttpServer (top-level), PySide6.QtPositioning (top-level), PySide6.QtLocation (top-level), PySide6.QtMultimedia (top-level), PySide6.QtNfc (top-level), PySide6.QtPdf (top-level), PySide6.QtPrintSupport (top-level), PySide6.QtQuickTest (top-level), PySide6.QtRemoteObjects (top-level), PySide6.QtScxml (top-level), PySide6.QtSensors (top-level), PySide6.QtSerialBus (top-level), PySide6.QtStateMachine (top-level), PySide6.QtWebEngineCore (top-level), PySide6.QtWebEngineQuick (top-level), PySide6.QtWebEngineWidgets (top-level), PySide6.QtWebSockets (top-level), PySide6.QtWebView (top-level), xml.etree.ElementTree (top-level), tomllib._parser (conditional)
+missing module named pwd - imported by posixpath (delayed, conditional, optional), shutil (delayed, optional), tarfile (optional), pathlib (optional), netrc (delayed, optional), subprocess (delayed, conditional, optional)
+missing module named grp - imported by shutil (delayed, optional), tarfile (optional), pathlib (optional), subprocess (delayed, conditional, optional)
+missing module named _scproxy - imported by urllib.request (conditional)
+missing module named fcntl - imported by pathlib._os (optional), subprocess (optional)
+missing module named posix - imported by posixpath (optional), shutil (conditional), importlib._bootstrap_external (conditional), pathlib._os (optional), os (conditional, optional)
+missing module named resource - imported by posix (top-level)
+missing module named _frozen_importlib_external - imported by importlib._bootstrap (delayed), importlib (optional), importlib.abc (optional), zipimport (top-level)
+excluded module named _frozen_importlib - imported by importlib (optional), importlib.abc (optional), zipimport (top-level)
+missing module named _posixsubprocess - imported by subprocess (conditional), multiprocessing.util (delayed)
+missing module named _posixshmem - imported by multiprocessing.resource_tracker (conditional), multiprocessing.shared_memory (conditional)
+missing module named multiprocessing.BufferTooShort - imported by multiprocessing (top-level), multiprocessing.connection (top-level)
+missing module named multiprocessing.AuthenticationError - imported by multiprocessing (top-level), multiprocessing.forkserver (top-level), multiprocessing.connection (top-level)
+missing module named multiprocessing.get_context - imported by multiprocessing (top-level), multiprocessing.pool (top-level), multiprocessing.managers (top-level), multiprocessing.sharedctypes (top-level)
+missing module named multiprocessing.TimeoutError - imported by multiprocessing (top-level), multiprocessing.pool (top-level)
+missing module named multiprocessing.set_start_method - imported by multiprocessing (top-level), multiprocessing.spawn (top-level)
+missing module named multiprocessing.get_start_method - imported by multiprocessing (top-level), multiprocessing.spawn (top-level)
+missing module named pyimod02_importers - imported by C:\Users\don1ng\AppData\Local\Programs\Python\Python314\Lib\site-packages\PyInstaller\hooks\rthooks\pyi_rth_pkgutil.py (delayed)
+missing module named PySide6.support.feature - imported by PySide6.support (delayed, conditional), PySide6.support.generate_pyi (delayed, conditional)
+missing module named 'PySide6.support.signature' - imported by PySide6.support.generate_pyi (delayed)
+missing module named qtpy2cpp_lib - imported by PySide6.scripts.qtpy2cpp (top-level)
+missing module named project_lib - imported by PySide6.scripts.project (top-level)
+missing module named deploy_lib - imported by PySide6.scripts.deploy (top-level)

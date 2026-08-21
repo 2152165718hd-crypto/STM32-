@@ -1,0 +1,29 @@
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Program Files (x86)\KEIL\MDK\ARM\ARMCC\Bin'
+Build target 'Template'
+compiling locker_app.c...
+..\Users\locker_app.c(164): warning:  #177-D: variable "s_tcpHelloSent"  was declared but never referenced
+  static uint8_t s_tcpHelloSent = 0U;
+..\Users\locker_app.c(166): warning:  #550-D: variable "s_exportIndex"  was set but never used
+  static uint16_t s_exportIndex = 0U;
+..\Users\locker_app.c(185): warning:  #550-D: variable "s_tcpQueueOverflow"  was set but never used
+  static uint8_t s_tcpQueueOverflow = 0U;
+..\Users\locker_app.c(1456): warning:  #177-D: function "App_ResetTcpProtocolState"  was declared but never referenced
+  static void App_ResetTcpProtocolState(void)
+..\Users\locker_app.c(1489): warning:  #177-D: function "App_DequeueTcpCommand"  was declared but never referenced
+  static uint8_t App_DequeueTcpCommand(TcpCommand_t *cmd)
+..\Users\locker_app.c(1588): warning:  #177-D: function "App_OnTcpPacket"  was declared but never referenced
+  static void App_OnTcpPacket(ESP_DataPacket_t *packet)
+..\Users\locker_app.c(1760): warning:  #177-D: function "App_SendHello"  was declared but never referenced
+  static void App_SendHello(void)
+..\Users\locker_app.c(1841): warning:  #177-D: function "App_SendRecord"  was declared but never referenced
+  static void App_SendRecord(const LockerRecord_t *rec)
+..\Users\locker_app.c(1876): warning:  #177-D: function "App_SendExportDone"  was declared but never referenced
+  static void App_SendExportDone(void)
+..\Users\locker_app.c(2426): warning:  #177-D: function "App_ProcessTcpCommand"  was declared but never referenced
+  static void App_ProcessTcpCommand(const TcpCommand_t *cmd)
+..\Users\locker_app.c: 10 warnings, 0 errors
+linking...
+Program Size: Code=71016 RO-data=14592 RW-data=496 ZI-data=16968  
+FromELF: creating hex file...
+"..\Output\Objects\Project.axf" - 0 Error(s), 10 Warning(s).
+Build Time Elapsed:  00:00:02
