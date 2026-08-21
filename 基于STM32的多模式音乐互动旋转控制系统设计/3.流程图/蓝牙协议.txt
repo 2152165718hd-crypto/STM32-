@@ -1,0 +1,60 @@
+协议总览
+
+通信方式：ASCII 文本，单行命令。
+一条命令一行，设备回复一行。
+建议每条命令以回车或换行结束（\r 或 \n）。
+若没有行结束符，设备在 300ms 空闲后也会把当前缓存当作一条命令处理。
+单行最大长度 47 字节，超长返回 ERR FORMAT。
+命令格式
+
+查询命令：STAT?
+设置命令：KEY=VALUE
+KEY 和 VALUE 都区分大小写。
+一条命令里不允许空格、Tab、逗号、分号。
+设置命令必须且只能有一个 = 号。
+已支持命令
+
+STAT?
+返回：STAT MODE=... SPD=... DUTY=... THR=... ALM=... SND=... RAW=... BT=...
+
+MODE=MUSIC | MODE=MANUAL | MODE=AUTO
+返回：MODE=xxx OK
+作用：切换模式并立即刷新控制输出。
+
+SPD=0~1000
+返回：SPD=数值 OK
+作用：设置手动速度，同时自动切到 MANUAL 模式并立即生效。
+
+THR=0~1000
+返回：THR=数值 OK
+作用：设置安全阈值，重置告警统计窗口。
+
+CLR=ALARM
+返回：CLR=ALARM OK
+作用：清除当前告警并进入抑制期。
+
+状态字段含义（STAT 回复）
+
+MODE：当前模式（MUSIC/MANUAL/AUTO）
+SPD：手动速度设定值
+DUTY：当前实际输出占空比（千分比）
+THR：安全阈值（千分比）
+ALM：告警状态（0/1）
+SND：处理后的声音强度（千分比）
+RAW：原始声音采样值
+BT：蓝牙连接状态（0/1）
+错误返回
+
+ERR FORMAT：格式错误（非法字符、空格、分隔符、超长、等号结构不对等）
+ERR VALUE：参数值错误（超范围或枚举值不合法）
+ERR CMD：命令字不支持
+交互示例
+
+发送：MODE=MANUAL
+回复：MODE=MANUAL OK
+
+发送：SPD=500
+回复：SPD=500 OK
+
+发送：STAT?
+回复：STAT MODE=MANUAL SPD=500 DUTY=... THR=... ALM=... SND=... RAW=... BT=...
